@@ -52,6 +52,11 @@ function filtrerParQuartierDepart(trajets, quartier) {
      * Si quartier est vide ou null, retourne tous les trajets.
      */
     // TODO
+    if(!quartier){
+        return trajets;
+    }
+    const trajetsFiltres = trajets.filter(trajet => trajet.quartier_depart === quartier);
+    return trajetsFiltres;
 }
 
 function rechercherParMotCle(trajets, motCle) {
@@ -64,6 +69,15 @@ function rechercherParMotCle(trajets, motCle) {
      * Si motCle est vide, retourne tous les trajets.
      */
     // TODO
+    if (!motCle){
+        return trajets;
+    }
+    return trajets.filter((trajet) => 
+        trajet.quartier_depart.toLowerCase().includes(motCle.toLowerCase()) ||
+        trajet.quartier_arrivee.toLowerCase().includes(motCle.toLowerCase()) ||
+        trajet.commentaire.toLowerCase().includes(motCle.toLowerCase())
+
+    );
 }
 
 // ============================================================================
@@ -161,6 +175,11 @@ function calculerPourcentageOccupation(placesOccupees, placesTotales) {
      * Si placesTotales est 0, retourne 0.
      */
     // TODO
+    if (placesTotales === 0) {
+        return 0;
+    }
+    const pourcentage = (placesOccupees / placesTotales) * 100;
+    return Math.round(pourcentage);
 }
 
 function getBadgeDisponibilite(placesRestantes) {
@@ -175,6 +194,13 @@ function getBadgeDisponibilite(placesRestantes) {
      * - 2+ places → {libelle: "N places", classe: "badge-dispo"}  (N = placesRestantes)
      */
     // TODO
+    if (placesRestantes === 0) {
+        return { libelle: "Complet", classe: "badge-complet" };
+    } else if (placesRestantes === 1) {
+        return { libelle: "1 place", classe: "badge-limite" };
+    } else {
+        return { libelle: `${placesRestantes} places`, classe: "badge-dispo" };
+    }
 }
 
 // ============================================================================
