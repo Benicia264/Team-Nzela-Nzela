@@ -31,6 +31,13 @@
   font-size: 1rem;
 }
 
+select#filtre-depart {
+  background: var(--color-primary);
+  color: white;
+  cursor: pointer;
+}
+
+
 #btn-rechercher{
     padding: 10px 20px;
     background: var(--color-primary);
