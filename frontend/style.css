@@ -66,16 +66,9 @@ main {
 }
 
 /* Alignement des liens centraux et des boutons */
-.logo-site {
-  font-size: 1.25rem;
-  font-weight: 700;
-}
 
-.logo-site span {
-  color: var(--primary-color);
-}
 
-.liens-navigation {
+.Liens-navigation {
   display: flex;
   align-items: center;
   gap: 1.25rem;
