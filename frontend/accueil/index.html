@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BraCovoit — Accueil</title>
   <link rel="stylesheet" href="accueil.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body id="page-accueil">
 
@@ -16,8 +17,27 @@
        Doit inclure un menu burger fonctionnel en dessous de 768px.
        ===================================================================== -->
 
+  
+  <header>
   <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-  <div id="nav-session"></div>
+  <div id="nav-session">
+    <img src="../images/logo.png" alt="Logo de l'application" width="100" height="50">
+    <nav class="Liens-navigation">
+      <a href="../accueil/index.html">Accueil</a>
+      <a href="../proposer/proposer.html">Recherche</a>
+      <a href="../trajet/trajet.html">Trajet</a>
+      <a href="#a-propos">A propos</a>
+      <a href="#aide">Aide</a>
+
+    </nav>
+
+    <div class="actions-header">
+      <a href="../login/login.html" class="btn-connexion">Se connecter</a>
+      <a href="../inscription/inscription.html" class="btn-inscription">S'inscrire</a>
+
+    </div>
+  </div>
+  </header>
 
   <main>
     <!-- =====================================================================
@@ -70,8 +90,65 @@
   </main>
 
   <!-- FOOTER — TODO (Dev FS1) : liens utiles, mentions -->
-
+   
+  <footer id="footer-global">
+    
   <div id="erreur-globale" hidden></div>
+  <div class="footer-container">
+  <div class="footer-col footer-about">
+    
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook"><span>f</span></a>
+        <a href="#" aria-label="Instagram"><span>Ig</span></a>
+        <a href="#" aria-label="Twitter"><span>x</span></a>
+        <a href="#" aria-label="LinkedIn"><span>in</span></a>
+      </div>
+    </div>
+
+    <!-- Colonne 2 : Navigation -->
+    <div class="footer-col">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="../accueil/index.html">Accueil</a></li>
+        <li><a href="../recherche/recherche.html">Trajets</a></li>
+        <li><a href="../proposer/proposer.html">Proposer un trajet</a></li>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#aide">Aide</a></li>
+      </ul>
+    </div>
+
+    <!-- Colonne 3 : Ressources -->
+    <div class="footer-col">
+      <h3>Ressources</h3>
+      <ul>
+        <li><a href="#">Sécurité</a></li>
+        <li><a href="#">Conditions d'utilisation</a></li>
+        <li><a href="#">Confidentialité</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+
+    <!-- Colonne 4 : Contact -->
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <ul class="contact-list">
+        <li>contact@nzela-nzela.com</li>
+        <li>+242 06 123 45 67</li>
+        <li>Brazzaville, Congo</li>
+      </ul>
+    </div>
+
+  
+  </div>
+  <!-- Bas du footer (Copyright & Crédits) -->
+  <div class="footer-bottom">
+    <p>© 2025 Nzéla-Nzéla. Tous droits réservés.</p>
+    
+  </div>
+  
+</footer>
+  
+  
 
   <!-- NE PAS MODIFIER — scripts de connexion au backend -->
   <script src="../functions.js"></script>
