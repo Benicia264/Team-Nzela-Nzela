@@ -227,6 +227,27 @@ function validerFormulaireLogin(formulaire) {
      * - mot_de_passe obligatoire
      */
     // TODO
+    const erreurs = [];
+
+    const telephone = (formulaire.telephone || "").trim();
+    const motDePasse = (formulaire.mot_de_passe || "").trim();
+
+    if (telephone === "") {
+        erreurs.push("Le téléphone est obligatoire.");
+    } else if (!/^0[4-6]\d{7}$/.test(telephone)) {
+        erreurs.push("Le téléphone doit être un numéro valide (ex : 066123456).");
+    }
+
+    if (motDePasse === "") {
+        erreurs.push("Le mot de passe est obligatoire.");
+    } else if (motDePasse.length < 6) {
+        erreurs.push("Le mot de passe doit contenir au moins 6 caractères.");
+    }
+
+    return {
+        valide: erreurs.length === 0,
+        erreurs: erreurs
+    };
 }
 
 // ============================================================================
