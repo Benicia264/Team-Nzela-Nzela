@@ -1,161 +1,272 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BraCovoit — Connexion</title>
-  <link rel="stylesheet" href="login.css">
-  <link rel="stylesheet" href="../style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Nzéla-Nzéla</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body id="page-login">
 
-  <!-- NAVIGATION — TODO (Dev FS7) -->
-   <header></header>
-  <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-  <div id="nav-session">
-  <img src="../images/logo.png" alt="Logo de l'application" width="100" height="50">
-    <nav class="Liens-navigation">
-      <a href="../accueil/index.html">Accueil</a>
-      <a href="../proposer/proposer.html">Recherche</a>
-      <a href="../trajet/trajet.html">Trajet</a>
-      <a href="#a-propos">A propos</a>
-      <a href="#aide">Aide</a>
-
-    </nav>
-    <div class="actions-header">
-      <a href="../login/login.html" class="btn-connexion">Se connecter</a>
-      <a href="../inscription/inscription.html" class="btn-inscription">S'inscrire</a>
-
-    </div>
-  </div>
-  </header>
-
-  <main>
-    <!-- =====================================================================
-         FORMULAIRE — TODO (Dev FS7)
-         Mettre en forme le formulaire de connexion : téléphone, mot de
-         passe. Prévoir un layout clair en colonne, avec des labels
-         visibles pour chaque champ.
-
-         *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
-         ===================================================================== -->
-    <form id="form-login">
-      <label for="l-telephone">Téléphone</label>
-      <input type="tel" id="l-telephone" placeholder="066123456">
-
-      <label for="l-mot-de-passe">Mot de passe</label>
-      <input type="password" id="l-mot-de-passe">
-
-      <button type="submit">Se connecter</button>
-    </form>
-
-    <!-- Zone d'erreurs de validation — TODO (Dev FS7) : mettre en forme la
-         liste <ul><li> injectée par main.js en cas de formulaire invalide.
-         NE PAS MODIFIER l'id. -->
-    <div id="erreurs-form" hidden></div>
-
-    <!-- LIEN VERS INSCRIPTION — TODO (Dev FS7) : lien "Pas encore de compte ?
-         S'inscrire" pointant vers ../inscription/inscription.html -->
-  </main>
-   <div id="erreur-globale" hidden></div>
-   <footer id="footer-global">
-  
-  <div class="footer-container">
-  <div class="footer-col footer-about">
-      <div class="footer-logo">
+    <!-- NAVIGATION — TODO (Dev FS7) -->
+    <header>
+    <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
+    <div id="nav-session">
         <img src="../images/logo.png" alt="Logo de l'application" width="100" height="50">
-        <strong>Nzéla-Nzéla</strong>
-      </div>
-      <p>Nzéla-Nzéla, c'est plus qu'un trajet, c'est une communauté.</p>
-      
-      <!-- Réseaux sociaux -->
-      <div class="footer-socials">
-        <a href="#" aria-label="Facebook"><span>f</span></a>
-        <a href="#" aria-label="Instagram">📷</span></a>
-        <a href="#" aria-label="Twitter"><span>🐦</span></a>
-        <a href="#" aria-label="LinkedIn"><span>in</span></a>
-      </div>
+        <nav class="Liens-navigation">
+            <a href="../accueil/index.html">Accueil</a>
+            <a href="../proposer/proposer.html">Recherche</a>
+            <a href="../trajet/trajet.html">Trajet</a>
+            <a href="#a-propos">A propos</a>
+            <a href="#aide">Aide</a>
+        </nav>
+
+        <div class="actions-header">
+            <a href="../login/login.html" class="btn-connexion">Se connecter</a>
+            <a href="../inscription/inscription.html" class="btn-inscription">S'inscrire</a>
+        </div>
     </div>
+    </header>
 
-    <!-- Colonne 2 : Navigation -->
-    <div class="footer-col">
-      <h3>Navigation</h3>
-      <ul>
-        <li><a href="../accueil/index.html">Accueil</a></li>
-        <li><a href="../recherche/recherche.html">Trajets</a></li>
-        <li><a href="../proposer/proposer.html">Proposer un trajet</a></li>
-        <li><a href="#a-propos">À propos</a></li>
-        <li><a href="#aide">Aide</a></li>
-      </ul>
-    </div>
+    <!-- MAIN CONTAINER -->
+    <main class="main-container">
+        <div class="auth-card">
 
-    <!-- Colonne 3 : Ressources -->
-    <div class="footer-col">
-      <h3>Ressources</h3>
-      <ul>
-        <li><a href="#">Sécurité</a></li>
-        <li><a href="#">Conditions d'utilisation</a></li>
-        <li><a href="#">Confidentialité</a></li>
-        <li><a href="#">FAQ</a></li>
-      </ul>
-    </div>
+            <!-- Colonne gauche : Avantages / Visuel -->
+            <div class="auth-left">
+                <h1>Bienvenue !</h1>
+                <p class="auth-subtitle">Connectez-vous à votre compte pour continuer l'aventure.</p>
 
-    <!-- Colonne 4 : Contact -->
-    <div class="footer-col">
-      <h3>Contact</h3>
-      <ul class="contact-list">
-        <li>
-  <div class="footer-socials">
-        <a href="#" aria-label="Facebook"><span>f</span></a>
-        <a href="#" aria-label="Instagram"><span>📷</span></a>
-        <a href="#" aria-label="Twitter"><span>🐦</span></a>
-        <a href="#" aria-label="LinkedIn"><span>in</span></a>
-      </div>
-    </div>
+                <div class="advantages-list">
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <svg viewBox="0 0 24 24" fill="none" width="22" height="22" aria-hidden="true">
+                                <path d="M12 3l7 3v6c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V6l7-3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Connexion sécurisée</h3>
+                            <p>Vos données sont protégées et votre confidentialité est notre priorité.</p>
+                        </div>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <svg viewBox="0 0 24 24" fill="none" width="22" height="22" aria-hidden="true">
+                                <circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/>
+                                <path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Réservation facile</h3>
+                            <p>Accédez rapidement à vos trajets et réservations en cours.</p>
+                        </div>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <svg viewBox="0 0 24 24" fill="none" width="22" height="22" aria-hidden="true">
+                                <circle cx="9" cy="8.5" r="3" stroke="currentColor" stroke-width="1.6"/>
+                                <path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                <path d="M16 8.5a3 3 0 1 1 0-.001M15 14c2.5.4 4.5 2.2 4.5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3>Expérience personnalisée</h3>
+                            <p>Retrouvez vos préférences et profitez d'une expérience sur mesure.</p>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Colonne 2 : Navigation -->
-    <div class="footer-col">
-      <h3>Navigation</h3>
-      <ul>
-        <li><a href="../accueil/index.html">Accueil</a></li>
-        <li><a href="../recherche/recherche.html">Trajets</a></li>
-        <li><a href="../proposer/proposer.html">Proposer un trajet</a></li>
-        <li><a href="#a-propos">À propos</a></li>
-        <li><a href="#aide">Aide</a></li>
-      </ul>
-    </div>
+                <div class="auth-illustration">
+                    <svg class="nn-illustration" viewBox="0 0 520 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <rect x="30" y="60" width="26" height="80" rx="2" fill="var(--color-bg-alt)"/>
+                        <rect x="64" y="40" width="34" height="100" rx="2" fill="var(--color-bg-alt)"/>
+                        <rect x="150" y="20" width="40" height="120" rx="2" fill="var(--color-bg-alt)"/>
+                        <rect x="196" y="55" width="24" height="85" rx="2" fill="var(--color-bg-alt)"/>
+                        <rect x="360" y="45" width="30" height="95" rx="2" fill="var(--color-bg-alt)"/>
+                        <path d="M0 148c60-10 120 6 180-4s120-14 180-2 100 8 160-2" stroke="var(--color-primary-light)" stroke-width="10" stroke-linecap="round"/>
+                        <g>
+                            <rect x="96" y="110" width="4" height="20" fill="#c9b79c"/>
+                            <circle cx="98" cy="102" r="14" fill="var(--color-primary-light)"/>
+                            <circle cx="98" cy="102" r="8" fill="var(--color-primary)"/>
+                        </g>
+                        <g>
+                            <rect x="228" y="112" width="4" height="20" fill="#c9b79c"/>
+                            <circle cx="230" cy="104" r="13" fill="var(--color-primary-light)"/>
+                            <circle cx="230" cy="104" r="7" fill="var(--color-primary)"/>
+                        </g>
+                        <g>
+                            <rect x="320" y="108" width="4" height="22" fill="#c9b79c"/>
+                            <circle cx="322" cy="100" r="14" fill="var(--color-primary-light)"/>
+                            <circle cx="322" cy="100" r="8" fill="var(--color-primary)"/>
+                        </g>
+                        <path d="M270 118c20 6 34-8 54-4s24 18 44 12 30-20 54-12" stroke="var(--color-primary)" stroke-width="2.5" stroke-dasharray="5 6" stroke-linecap="round"/>
+                        <g>
+                            <path d="M170 118h96l-8-16c-3-6-9-10-16-10h-46c-7 0-13 4-16 10Z" fill="var(--color-primary)"/>
+                            <rect x="150" y="118" width="136" height="20" rx="8" fill="var(--color-primary)"/>
+                            <circle cx="180" cy="140" r="11" fill="#1a1a1a"/>
+                            <circle cx="180" cy="140" r="4.5" fill="var(--color-bg)"/>
+                            <circle cx="256" cy="140" r="11" fill="#1a1a1a"/>
+                            <circle cx="256" cy="140" r="4.5" fill="var(--color-bg)"/>
+                            <rect x="196" y="97" width="16" height="12" rx="2" fill="var(--color-primary-light)"/>
+                            <rect x="214" y="97" width="16" height="12" rx="2" fill="var(--color-primary-light)"/>
+                        </g>
+                        <path d="M448 55c-13 0-24 10-24 23 0 17 24 42 24 42s24-25 24-42c0-13-11-23-24-23Z" fill="var(--color-primary)"/>
+                        <circle cx="448" cy="78" r="9" fill="var(--color-bg)"/>
+                    </svg>
+                </div>
+            </div>
 
-    <!-- Colonne 3 : Ressources -->
-    <div class="footer-col">
-      <h3>Ressources</h3>
-      <ul>
-        <li><a href="#">Sécurité</a></li>
-        <li><a href="#">Conditions d'utilisation</a></li>
-        <li><a href="#">Confidentialité</a></li>
-        <li><a href="#">FAQ</a></li>
-      </ul>
-    </div>
+            <!-- Colonne droite : Formulaire de Connexion -->
+            <div class="auth-right">
+                <div class="form-header">
+                    <h2>Se connecter</h2>
+                    <p class="auth-subtitle">Entrez vos identifiants pour accéder à votre compte.</p>
+                </div>
 
-    <!-- Colonne 4 : Contact -->
-    <div class="footer-col">
-      <h3>Contact</h3>
-      <ul class="contact-list">
-        <li>contact@nzela-nzela.com</li>
-        <li>+242 06 123 45 67</li>
-        <li>Brazzaville, Congo</li>
-      </ul>
-    </div>
+                <!-- =====================================================================
+                     FORMULAIRE — TODO (Dev FS7)
+                     Mettre en forme le formulaire de connexion : téléphone, mot de
+                     passe. Prévoir un layout clair en colonne, avec des labels
+                     visibles pour chaque champ.
+                     *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
+                     ===================================================================== -->
+                <form id="form-login" class="auth-form" action="#" method="POST" novalidate>
+                    <div class="input-group">
+                        <label for="l-telephone">Téléphone</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" width="18" height="18" aria-hidden="true">
+                                <path d="M5 4h3.5l1.5 4-2 1.5a11 11 0 0 0 5.5 5.5L15 13.5l4 1.5V19c0 1-1 1.5-2 1.4C10.5 19.6 4.4 13.5 3.6 6.9 3.5 5.9 4 5 5 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                            </svg>
+                            <input type="tel" id="l-telephone" name="telephone" placeholder="066123456" autocomplete="tel" required>
+                        </div>
+                    </div>
 
-  
-  </div>
-  <!-- Bas du footer (Copyright & Crédits) -->
-  <div class="footer-bottom">
-    <p>© 2026 Nzéla-Nzéla. Tous droits réservés.</p>
-  </div>
-  
-  </footer>
+                    <div class="input-group">
+                        <label for="l-mot-de-passe">Mot de passe</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" fill="none" width="18" height="18" aria-hidden="true">
+                                <rect x="5" y="10.5" width="14" height="9" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                                <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="currentColor" stroke-width="1.6"/>
+                            </svg>
+                            <input type="password" id="l-mot-de-passe" name="password" placeholder="Entrez votre mot de passe" autocomplete="current-password" required>
+                            <svg class="password-toggle" viewBox="0 0 24 24" fill="none" width="18" height="18" aria-hidden="true" role="button" aria-label="Afficher le mot de passe">
+                                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/>
+                            </svg>
+                        </div>
+                    </div>
 
-  <script src="../functions.js"></script>
-  <script src="../main.js"></script>
+                    <div class="form-actions-row">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="remember">
+                            <span class="checkmark"></span>
+                            Se souvenir de moi
+                        </label>
+                        <a href="mot-de-passe-oublie.html" class="forgot-link">Mot de passe oublié ?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Se connecter</button>
+
+                    <div class="divider">
+                        <span>ou</span>
+                    </div>
+
+                    <button type="button" class="btn btn-google btn-full">
+                        <svg class="google-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.2v3.15C3.18 21.3 7.22 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.2C.44 8.12 0 9.87 0 12s.44 3.88 1.2 5.42l4.08-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.22 0 3.18 2.7 1.2 6.58l4.08 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+                        Se connecter avec Google
+                    </button>
+                </form>
+
+                <!-- Zone d'erreurs de validation — TODO (Dev FS7) : mettre en forme la
+                     liste <ul><li> injectée par main.js en cas de formulaire invalide.
+                     NE PAS MODIFIER l'id. -->
+                <div id="erreurs-form" hidden></div>
+
+                <!-- LIEN VERS INSCRIPTION — TODO (Dev FS7) : lien "Pas encore de compte ?
+                     S'inscrire" pointant vers ../inscription/inscription.html -->
+                <p class="auth-switch-prompt">
+                    Vous n'avez pas encore de compte ? <a href="../inscription/inscription.html">S'inscrire</a>
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer id="footer-global">
+
+        <div id="erreur-globale" hidden></div>
+        <div class="footer-container">
+        <div class="footer-col footer-about">
+
+            <div class="footer-socials">
+                <a href="#" aria-label="Facebook"><span>f</span></a>
+                <a href="#" aria-label="Instagram"><span>Ig</span></a>
+                <a href="#" aria-label="Twitter"><span>x</span></a>
+                <a href="#" aria-label="LinkedIn"><span>in</span></a>
+            </div>
+        </div>
+
+        <!-- Colonne 2 : Navigation -->
+        <div class="footer-col">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="../accueil/index.html">Accueil</a></li>
+                <li><a href="../recherche/recherche.html">Trajets</a></li>
+                <li><a href="../proposer/proposer.html">Proposer un trajet</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#aide">Aide</a></li>
+            </ul>
+        </div>
+
+        <!-- Colonne 3 : Ressources -->
+        <div class="footer-col">
+            <h3>Ressources</h3>
+            <ul>
+                <li><a href="#">Sécurité</a></li>
+                <li><a href="#">Conditions d'utilisation</a></li>
+                <li><a href="#">Confidentialité</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+
+        <!-- Colonne 4 : Contact -->
+        <div class="footer-col">
+            <h3>Contact</h3>
+            <ul class="contact-list">
+                <li>contact@nzela-nzela.com</li>
+                <li>+242 06 123 45 67</li>
+                <li>Brazzaville, Congo</li>
+            </ul>
+        </div>
+
+
+        </div>
+        <!-- Bas du footer (Copyright & Crédits) -->
+        <div class="footer-bottom">
+            <p>© 2025 Nzéla-Nzéla. Tous droits réservés.</p>
+
+        </div>
+
+    </footer>
+
+    <script>
+        // Toggle simple pour afficher/masquer le mot de passe
+        document.addEventListener('DOMContentLoaded', function () {
+            var toggle = document.querySelector('.password-toggle');
+            var input = document.getElementById('l-mot-de-passe');
+            if (toggle && input) {
+                toggle.addEventListener('click', function () {
+                    var isHidden = input.type === 'password';
+                    input.type = isHidden ? 'text' : 'password';
+                });
+            }
+        });
+    </script>
+
+    <!-- NE PAS MODIFIER — scripts de connexion au backend -->
+    <script src="../functions.js"></script>
+    <script src="../main.js"></script>
 </body>
 </html>
