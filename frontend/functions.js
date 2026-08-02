@@ -52,6 +52,11 @@ function filtrerParQuartierDepart(trajets, quartier) {
      * Si quartier est vide ou null, retourne tous les trajets.
      */
     // TODO
+    if(!quartier){
+        return trajets;
+    }
+    const trajetsFiltres = trajets.filter(trajet => trajet.quartier_depart === quartier);
+    return trajetsFiltres;
 }
 
 function rechercherParMotCle(trajets, motCle) {
@@ -64,6 +69,15 @@ function rechercherParMotCle(trajets, motCle) {
      * Si motCle est vide, retourne tous les trajets.
      */
     // TODO
+    if (!motCle){
+        return trajets;
+    }
+    return trajets.filter((trajet) => 
+        trajet.quartier_depart.toLowerCase().includes(motCle.toLowerCase()) ||
+        trajet.quartier_arrivee.toLowerCase().includes(motCle.toLowerCase()) ||
+        trajet.commentaire.toLowerCase().includes(motCle.toLowerCase())
+
+    );
 }
 
 // ============================================================================
@@ -178,6 +192,11 @@ function calculerPourcentageOccupation(placesOccupees, placesTotales) {
      * Si placesTotales est 0, retourne 0.
      */
     // TODO
+    if (placesTotales === 0) {
+        return 0;
+    }
+    const pourcentage = (placesOccupees / placesTotales) * 100;
+    return Math.round(pourcentage);
 }
 
 function getBadgeDisponibilite(placesRestantes) {
@@ -192,6 +211,13 @@ function getBadgeDisponibilite(placesRestantes) {
      * - 2+ places → {libelle: "N places", classe: "badge-dispo"}  (N = placesRestantes)
      */
     // TODO
+    if (placesRestantes === 0) {
+        return { libelle: "Complet", classe: "badge-complet" };
+    } else if (placesRestantes === 1) {
+        return { libelle: "1 place", classe: "badge-limite" };
+    } else {
+        return { libelle: `${placesRestantes} places`, classe: "badge-dispo" };
+    }
 }
 
 // ============================================================================
@@ -244,6 +270,27 @@ function validerFormulaireLogin(formulaire) {
      * - mot_de_passe obligatoire
      */
     // TODO
+    const erreurs = [];
+
+    const telephone = (formulaire.telephone || "").trim();
+    const motDePasse = (formulaire.mot_de_passe || "").trim();
+
+    if (telephone === "") {
+        erreurs.push("Le téléphone est obligatoire.");
+    } else if (!/^0[4-6]\d{7}$/.test(telephone)) {
+        erreurs.push("Le téléphone doit être un numéro valide (ex : 066123456).");
+    }
+
+    if (motDePasse === "") {
+        erreurs.push("Le mot de passe est obligatoire.");
+    } else if (motDePasse.length < 6) {
+        erreurs.push("Le mot de passe doit contenir au moins 6 caractères.");
+    }
+
+    return {
+        valide: erreurs.length === 0,
+        erreurs: erreurs
+    };
 }
 
 // ============================================================================
