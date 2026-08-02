@@ -17,7 +17,6 @@
 // ============================================================================
 // Dev FS1 — page Accueil
 // ============================================================================
-
 function compterTrajetsAujourdhui(trajets, dateAujourdhui) {
     /**
      * Compte le nombre de trajets prévus pour la date donnée.
@@ -27,6 +26,9 @@ function compterTrajetsAujourdhui(trajets, dateAujourdhui) {
      * Exemple : compterTrajetsAujourdhui([{date:"2026-07-27"},{date:"2026-07-28"}], "2026-07-27") → 1
      */
     // TODO
+    const aujourdHui = new Date().toISOString().split('T')[0];
+
+    return trajets.filter(trajet => trajet.date === aujourdHui).length;
 }
 
 function formaterQuartierPrincipal(compteParQuartier) {
@@ -37,6 +39,16 @@ function formaterQuartierPrincipal(compteParQuartier) {
      * Si l'objet est vide, retourne "Aucun trajet".
      */
     // TODO
+    if (Object.keys(compteParQuartier).length === 0) {
+        return "Aucun trajet";
+    }
+
+    const [quartierPrincipal, nombreTrajets] = Object.entries(compteParQuartier)
+        .reduce((max, actuel) => {
+            return actuel[1] > max[1] ? actuel : max;
+        });
+
+    return `${quartierPrincipal} (${nombreTrajets} trajets)`;
 }
 
 // ============================================================================
