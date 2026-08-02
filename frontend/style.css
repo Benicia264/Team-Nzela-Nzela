@@ -41,7 +41,12 @@ main {
 /* =========================================================
    2. HEADER & NAVIGATION IDENTIQUES PARTOUT
    ========================================================= */
-#nav-session1 {
+  header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+  #nav-session1 {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
@@ -51,13 +56,22 @@ main {
   align-items: center;
   margin-bottom: 2rem;
   box-shadow: var(--shadow-sm);
+  flex-wrap: wrap;
+  gap: 1.25rem;
+ 
+}
+
+#nav-session1 img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 #nav-session1 a {
   color: var(--text-main);
   text-decoration: none;
   font-weight: 500;
-  margin-left: 1rem;
+  
   transition: color 0.2s;
 }
 
@@ -75,6 +89,7 @@ main {
   display: flex;
   align-items: center;
   gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
 .actions-header {
@@ -219,6 +234,22 @@ main {
 
 /* Responsive */
 @media (max-width: 768px) {
+  #nav-session1 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+  .Liens-navigation {
+    justify-content: center;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .actions-header {
+    justify-content: center;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
   .footer-container {
     grid-template-columns: 1fr;
     gap: 2rem;
