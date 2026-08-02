@@ -92,6 +92,15 @@ function formaterPrix(prix) {
      * Exemple : formaterPrix(500) → "500 FCFA", formaterPrix(1500) → "1 500 FCFA"
      */
     // TODO
+    
+    if(prix === null || prix === undefined || prix === '') {
+            return '0 FCFA';
+    }
+    const nombre = Number(prix);
+    if (isNaN(nombre)) {
+            return '0 FCFA';
+    }
+        return new Intl.NumberFormat('fr-FR').format(nombre) + ' FCFA';
 }
 
 function formaterHeure(heure) {
@@ -101,6 +110,14 @@ function formaterHeure(heure) {
      * @return {string} - "07h30"
      */
     // TODO
+    if (!heure) return '--h--';
+    const parties=String(heure).split(':');
+    if (parties.length < 2 ) return heure;
+    const heures = parties[0].padStart(2, '0');
+    const minutes = parties[1].padStart(2, '0');
+    return `${heures}h${minutes}`;
+    
+
 }
 
 // ============================================================================

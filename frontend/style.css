@@ -41,7 +41,7 @@ main {
 /* =========================================================
    2. HEADER & NAVIGATION IDENTIQUES PARTOUT
    ========================================================= */
-#nav-session {
+#nav-session1 {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
@@ -53,7 +53,7 @@ main {
   box-shadow: var(--shadow-sm);
 }
 
-#nav-session a {
+#nav-session1 a {
   color: var(--text-main);
   text-decoration: none;
   font-weight: 500;
@@ -61,8 +61,11 @@ main {
   transition: color 0.2s;
 }
 
-#nav-session a:hover {
+#nav-session1 a:hover {
   color: var(--primary-color);
+}
+#nav-session {
+  display: none;
 }
 
 /* Alignement des liens centraux et des boutons */
