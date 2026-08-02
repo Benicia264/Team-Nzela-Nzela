@@ -30,3 +30,29 @@
     margin-bottom: 16px;
     color: var(--text-main);
 }
+
+h2{
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: var(--text-main);
+    text-align: center;
+}
+
+.prochaines-etapes {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.prochaines-etapes {
+  text-align: center;
+}
+
+.prochaines-etapes__image {
+  display: block;
+  margin: 24px auto 0;
+  max-width: 330px;
+  height: auto;
+  border-radius: var(--radius-md);
+}
