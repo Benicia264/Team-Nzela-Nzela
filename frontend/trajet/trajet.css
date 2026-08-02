@@ -291,3 +291,139 @@ main {
 .btn-secondary { background: transparent; border: 1px solid var(--border-color); padding: 10px; border-radius: var(--radius-md); font-weight: 600; cursor: pointer; }
 
 .rules-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-muted); }
+
+/* ==========================================
+   ICÔNES HARMONISÉES (Style Inscription)
+   ========================================== */
+
+/* Dimensionnement des SVG */
+.svg-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* Bulle d'icône pour les détails du trajet */
+.icon-wrap {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adaptation pour la grille métrique */
+.metric-item .icon {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 6px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-item .icon .svg-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Bulle d'icône pour les règles du trajet */
+.icon-wrap-sm {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrap-sm .svg-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Alignement de la liste des règles */
+.rules-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+/* ==========================================
+   MEDIAS QUERIES - RESPONSIVE (Tablette & Mobile)
+   ========================================== */
+
+/* Écrans de taille moyenne et petite (< 992px) */
+@media (max-width: 992px) {
+  /* Empilement des 2 colonnes principales (Gauche + Sidebar) */
+  main {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* La sidebar passe sous la colonne principale */
+  .col-sidebar {
+    width: 100%;
+  }
+
+  /* Métriques : 3 colonnes puis passage à la ligne */
+  .metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Écrans mobiles (< 768px) */
+@media (max-width: 768px) {
+  /* Le visuel du trajet et la carte SVG s'empilent */
+  .trajet-visual-container {
+    grid-template-columns: 1fr;
+  }
+
+  .map-placeholder {
+    height: 180px;
+  }
+
+  /* La grille de détails passe sur une seule colonne */
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Section Avis : passage en vertical pour éviter l'écrasement */
+  .avis-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .score-box {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding-right: 0;
+    padding-bottom: 16px;
+    margin-bottom: 12px;
+  }
+
+  .reviews-horizontal {
+    grid-template-columns: 1fr; /* 1 avis par ligne */
+  }
+
+  /* Métriques : 2 colonnes sur smartphone */
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Très petits écrans (< 480px) */
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr; /* 1 métrique par ligne */
+  }
+}
