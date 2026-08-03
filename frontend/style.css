@@ -15,6 +15,7 @@
   --radius-lg: 16px;
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --section-sm-padding: 3rem;
 }
 
 * {
@@ -29,29 +30,36 @@ body {
   background-color: var(--bg-body);
   color: var(--text-main);
   line-height: 1.5;
-  padding: 1.5rem;
 }
 
+section {
+  padding: var(--section-sm-padding) !important;
+}
+
+.sub-header-container,
 main {
-  max-width: 1000px;
   margin: 0 auto;
+  max-width: 100%;
+}
+.sub-header-container{
+  padding-bottom: var(--section-sm-padding);
 }
 
 
 /* =========================================================
    2. HEADER & NAVIGATION IDENTIQUES PARTOUT
    ========================================================= */
-  /* ---------- Header ---------- */
 header {
   position: sticky;
   top: 0;
   z-index: index 100;
 }
-  #nav-session1 {
+
+#nav-session1 {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 1rem 1.5rem;
+  border-radius: 0;
+  padding: 0 var(--section-sm-padding);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,11 +67,11 @@ header {
   box-shadow: var(--shadow-sm);
   flex-wrap: wrap;
   gap: 1.25rem;
- 
+
 }
 
 #nav-session1 img {
-  max-width: 100%;
+  max-width: 80px;
   height: auto;
   object-fit: contain;
 }
@@ -72,12 +80,23 @@ header {
   color: var(--text-main);
   text-decoration: none;
   font-weight: 500;
-  
-  transition: color 0.2s;
+  transition: color 0.4s;
 }
 
 #nav-session1 a:hover {
   color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+}
+#nav-session1 .Liens-navigation a{
+  border-bottom: 3px solid transparent;
+}
+#nav-session1 .Liens-navigation a:hover {
+  border-bottom: 3px solid var(--primary-color);
+}
+#nav-session1 .Liens-navigation a.active
+ {
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
 }
 #nav-session {
   display: none;
@@ -122,13 +141,21 @@ header {
 .btn-inscription:hover {
   background-color: var(--primary-hover);
 }
-
-
+.regles-trajet h2,
+.details-trajet h2{
+  margin-top: 0;
+  margin-bottom: 1.3rem;
+  font-size: 1.3rem;
+}
+section.card{
+  padding: 1.5rem!important;
+}
 /* =========================================================
    3. FOOTER IDENTIQUE PARTOUT
    ========================================================= */
 #footer-global {
-  background-color: var(--text-main); /* Utilise la teinte sombre globale */
+  background-color: var(--text-main);
+  /* Utilise la teinte sombre globale */
   color: var(--card-bg);
   padding-top: 3rem;
   padding-bottom: 1.5rem;
@@ -136,12 +163,12 @@ header {
 }
 
 .footer-container {
-  max-width: 1100px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 var(--section-sm-padding);
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 .footer-col h3 {
@@ -161,7 +188,7 @@ header {
   margin-bottom: 0.75rem;
 }
 
-.footer-col a, 
+.footer-col a,
 .contact-list li {
   color: var(--border-color);
   text-decoration: none;
@@ -183,7 +210,11 @@ header {
   font-weight: 700;
   margin-bottom: 1rem;
 }
-
+.footer-logo img{
+  width: 80px;
+  height: auto;
+  border-radius: 8px;
+}
 .footer-about p {
   color: var(--border-color);
   font-size: 0.9rem;
@@ -241,21 +272,24 @@ header {
     text-align: center;
     padding: 1rem;
   }
+
   .Liens-navigation {
     justify-content: center;
     width: 100%;
     gap: 0.5rem;
   }
+
   .actions-header {
     justify-content: center;
     width: 100%;
     margin-top: 0.5rem;
   }
+
   .footer-container {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .footer-bottom {
     flex-direction: column;
     gap: 0.75rem;
@@ -286,7 +320,9 @@ header {
    5. BADGES DE STATUT & MESSAGES D'ERREUR COMMUNS
    ========================================================= */
 /* Badges d'état universels */
-.badge, [class*="badge-"], [class*="statut-"] {
+.badge,
+[class*="badge-"],
+[class*="statut-"] {
   display: inline-block;
   padding: 0.3rem 0.65rem;
   border-radius: 20px;

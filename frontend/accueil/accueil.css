@@ -640,7 +640,7 @@ nav.main-links a:hover {
   font-family: var(--font-display);
   font-weight: 800;
   color: var(--white);
-  font-size: 36px;
+  font-size: 1.5em;
   letter-spacing: -0.02em;
 }
 
