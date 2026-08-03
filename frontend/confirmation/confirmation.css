@@ -7,6 +7,10 @@
    ========================================================= */
 
 /* ---------- En-tête simple (logo + badge) ---------- */
+
+.Liens-navigation, .actions-header {
+    display: none;
+}
 .confirmation-header {
   max-width: 700px;
   margin: 0 auto;
@@ -283,4 +287,7 @@
   .actions-contact {
     flex-direction: column;
   }
+}
+body{
+    padding: 0;
 }
