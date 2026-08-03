@@ -221,7 +221,9 @@ section.card{
   margin-bottom: 1.25rem;
   line-height: 1.4;
 }
-
+.nn-card{
+  padding: 0;
+}
 /* Réseaux sociaux */
 .footer-socials {
   display: flex;
