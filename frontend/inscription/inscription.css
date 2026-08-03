@@ -57,15 +57,27 @@
 * { box-sizing: border-box; }
 
 body {
+  padding: 0;
   margin: 0;
-  font-family: var(--font-family);
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
   color: var(--color-text);
   background: var(--color-bg-alt);
 }
 
+header{
+  z-index: 100;
+}
+
 a { color: inherit; text-decoration: none; }
+
+/*img */
+
+#nav-session1 img {
+    max-width: 60px;
+    height: auto;
+    object-fit: contain;
+}
 
 /* ---------- Header / Nav ---------- */
 
@@ -507,4 +519,10 @@ a { color: inherit; text-decoration: none; }
  
 .nn-checkbox a:hover {
   text-decoration: underline;
+}
+
+/* nav session style */
+
+#nav-session{
+  display: none;
 }
