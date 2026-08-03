@@ -64,8 +64,12 @@ body {
   color: var(--ink);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
+  padding: 0;
 }
-
+main{
+  min-width: 100%;
+  width: 100%;
+}
 img {
   max-width: 100%;
   display: block;
@@ -1382,197 +1386,19 @@ nav.main-links a:hover {
 /* =========================================================
    2. HEADER & NAVIGATION IDENTIQUES PARTOUT
    ========================================================= */
+/* Correction menu & autres éléments */
 #nav-session1 {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 0;
-  padding: 0rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0;
-  box-shadow: var(--shadow-sm);
+    border-radius: 0;
+    padding: 0 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    flex-wrap: wrap;
+    gap: 1.25rem;
 }
-
-#nav-session1 a {
-  color: var(--text-main);
-  text-decoration: none;
-  font-weight: 500;
-  margin-left: 1rem;
-  transition: color 0.2s;
-}
-
 #nav-session1 img {
-  height: 100%;
-  width: 80px;
-}
-
-#nav-session1 a:hover {
-  color: var(--primary-color);
-}
-
-#nav-session {
-  display: none;
-}
-
-/* Alignement des liens centraux et des boutons */
-.Liens-navigation {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.actions-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.btn-connexion {
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color) !important;
-  padding: 0.45rem 0.85rem;
-  border-radius: var(--radius-sm);
-  font-weight: 600 !important;
-}
-
-.btn-connexion:hover {
-  background-color: var(--primary-light);
-}
-
-.btn-inscription {
-  background-color: var(--primary-color);
-  color: #ffffff !important;
-  padding: 0.45rem 0.85rem;
-  border-radius: var(--radius-sm);
-  font-weight: 600 !important;
-}
-
-.btn-inscription:hover {
-  background-color: var(--primary-hover);
-}
-
-
-/* =========================================================
-   3. FOOTER IDENTIQUE PARTOUT
-   ========================================================= */
-#footer-global {
-  background-color: var(--text-main);
-  /* Utilise la teinte sombre globale */
-  color: var(--card-bg);
-  padding-top: 3rem;
-  padding-bottom: 1.5rem;
-  margin-top: 4rem;
-}
-
-.footer-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 2rem;
-}
-
-.footer-col h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 1.25rem;
-  color: var(--card-bg);
-}
-
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-col ul li {
-  margin-bottom: 0.75rem;
-}
-
-.footer-col a,
-.contact-list li {
-  color: var(--border-color);
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s;
-}
-
-.footer-col a:hover {
-  color: var(--primary-light);
-  text-decoration: underline;
-}
-
-/* Colonne À propos & Logo */
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-.footer-about p {
-  color: var(--border-color);
-  font-size: 0.9rem;
-  margin-bottom: 1.25rem;
-  line-height: 1.4;
-}
-
-/* Réseaux sociaux */
-.footer-socials {
-  display: flex;
-  gap: 0.75rem;
-}
-
-.footer-socials a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  color: var(--card-bg);
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.85rem;
-  transition: background-color 0.2s;
-}
-
-.footer-socials a:hover {
-  background-color: var(--primary-color);
-}
-
-/* Copyright tout en bas */
-.footer-bottom {
-  max-width: 1100px;
-  margin: 2.5rem auto 0 auto;
-  padding: 1.5rem 1.5rem 0 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-.footer-bottom .heart {
-  color: #ef4444;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 0.75rem;
-    text-align: center;
-  }
+    max-width: 90px;
+    height: auto;
+    object-fit: contain;
 }
