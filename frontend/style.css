@@ -87,6 +87,9 @@ header {
   color: var(--primary-color);
   border-bottom: 3px solid var(--primary-color);
 }
+#nav-session1 #logo-link:hover{
+  border-bottom: none!important;
+}
 #nav-session1 .Liens-navigation a{
   border-bottom: 3px solid transparent;
 }
