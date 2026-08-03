@@ -38,18 +38,20 @@
     </div>
     <div id="nav-session"></div>
   </header>
+  <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
+  <div id="nav-session"></div>
 
-  <main>
+  <main class="confirmation-container">
+
     <!-- =====================================================================
-         MESSAGE DE CONFIRMATION — TODO (Dev FS6)
-         Cadre visuel de succès (icône, couleur positive). Le message exact
-         est injecté par main.js à partir du paramètre d'URL.
-
-         *** NE PAS MODIFIER l'id — main.js injecte le message ***
+         MESSAGE DE CONFIRMATION
+         *** NE PAS MODIFIER l'id #confirmation-message — main.js y injecte
+         le texte reçu depuis la page précédente ***
          ===================================================================== -->
     <section class="bloc-confirmation">
-      <h1>Merci !</h1>
-      <p id="confirmation-message"></p>
+      <div class="bloc-confirmation__icone"><span><i class="fas fa-check-circle"></i></span></div>
+      <h1>🎉 C'est confirmé !</h1>
+      <p id="confirmation-message">Merci pour votre confiance. Toutes les informations de votre trajet sont ci-dessous.</p>
     </section>
 
     <!-- PROCHAINES ÉTAPES — TODO (Dev FS6) : mettre en forme ces 3 liens
