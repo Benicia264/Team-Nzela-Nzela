@@ -4,10 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nzela Nzela — Proposer un trajet</title>
+  <title>Nzéla-Nzéla — Proposer un trajet</title>
   <link rel="icon" type="image/png" href="../images/logo.png">
-  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="proposer.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+    integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/fontawesome.min.css"
+    integrity="sha512-WAQldzapOKc+yIZB/g4npsWhF43dQ74uxwR6WkySVIKVGKaVNSuRw19CQeqN2OmYmg34g7TsZv3sh9nsQXYj3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body id="page-proposer">
@@ -21,15 +27,13 @@
       <nav class="Liens-navigation">
         <a href="../accueil/index.html">Accueil</a>
         <a href="../recherche/recherche.html">Rechercher un trajet</a>
-        <a href="../trajet/trajet.html">Trajet</a>
+        <a href="../trajet/trajet.html" class="active">Trajet</a>
         <a href="#a-propos">A propos</a>
         <a href="#aide">Aide</a>
-
       </nav>
       <div class="actions-header">
         <a href="../login/login.html" class="btn-connexion">Se connecter</a>
         <a href="../inscription/inscription.html" class="btn-inscription">S'inscrire</a>
-
       </div>
     </div>
 
@@ -102,7 +106,9 @@
   <div id="erreur-globale" hidden></div>
   <footer id="footer-global">
 
+
     <div class="footer-container">
+
       <div class="footer-col footer-about">
         <div class="footer-logo">
           <img src="../images/logo.png" alt="Logo de l'application" width="100" height="50">
@@ -110,12 +116,11 @@
         </div>
         <p>Nzéla-Nzéla: Partage ta voiture, partage ta route</p>
 
-        <!-- Réseaux sociaux -->
         <div class="footer-socials">
-          <a href="#" aria-label="Facebook"><span>f</span></a>
-          <a href="#" aria-label="Instagram"><span>📷</span></a>
-          <a href="#" aria-label="Twitter"><span>🐦</span></a>
-          <a href="#" aria-label="LinkedIn"><span>in</span></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
 
@@ -124,7 +129,7 @@
         <h3>Navigation</h3>
         <ul>
           <li><a href="../accueil/index.html">Accueil</a></li>
-          <li><a href="../recherche/recherche.html">Recherche</a></li>
+          <li><a href="../recherche/recherche.html">Rechercher un trajet</a></li>
           <li><a href="../proposer/proposer.html">Proposer un trajet</a></li>
           <li><a href="#a-propos">À propos</a></li>
           <li><a href="#aide">Aide</a></li>
@@ -157,6 +162,7 @@
     <!-- Bas du footer (Copyright & Crédits) -->
     <div class="footer-bottom">
       <p>© 2026 Nzéla-Nzéla. Tous droits réservés.</p>
+
     </div>
 
   </footer>
