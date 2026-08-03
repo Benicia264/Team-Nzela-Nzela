@@ -88,7 +88,7 @@ section {
   text-align: right;
 }
 #d-top-conducteurs{
-  padding-left: var(--card-padding);
+  padding-left: 15px;
 }
 .actions-btn a {
   text-decoration: none;
