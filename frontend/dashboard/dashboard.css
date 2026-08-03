@@ -81,13 +81,15 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  align-items: center;
+  align-items: stretch;
 }
 
 .actions-btn {
   text-align: right;
 }
-
+#d-top-conducteurs{
+  padding-left: var(--card-padding);
+}
 .actions-btn a {
   text-decoration: none;
   color: var(--primary-500);
@@ -131,12 +133,6 @@ section {
   font-size: 1.3em;
   font-weight: bold;
   color: var(--primary-500);
-}
-
-.grille-indicateurs .carte-indicateur h3::after {
-  content: '200';
-  font-size: 1.3em;
-  font-weight: bold;
 }
 
 .section-card .content {
