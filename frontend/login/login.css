@@ -270,7 +270,7 @@ ul {
   justify-content: center;
 }
 
-.form-header h2 {
+.form-header h1 {
   font-size: var(--font-size-h2);
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
@@ -339,7 +339,6 @@ ul {
     grid-template-columns: 1fr;
   }
   .auth-left {
-    border-right: none;
-    border-bottom: 1px solid var(--color-border);
+    display: none;
   }
 }
