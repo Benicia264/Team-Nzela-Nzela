@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BraCovoit — Accueil</title>
+  <title>Nzéla-Nzéla — Se déplacer ensemble, plus loin, pour moins cher</title>
+  <link rel="icon" type="image/png" href="../images/logo.png">
+  <!---- LIBRAIRIE DES ICONES LINEAR ICON  -->
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="accueil.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+    integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/fontawesome.min.css"
+    integrity="sha512-WAQldzapOKc+yIZB/g4npsWhF43dQ74uxwR6WkySVIKVGKaVNSuRw19CQeqN2OmYmg34g7TsZv3sh9nsQXYj3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body id="page-accueil">
 
   <!-- =====================================================================
@@ -16,8 +28,25 @@
        Doit inclure un menu burger fonctionnel en dessous de 768px.
        ===================================================================== -->
 
-  <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-  <div id="nav-session"></div>
+
+  <header>
+    <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
+    <div id="nav-session1">
+      <a href="../accueil/index.html" id="logo-link"><img src="../images/logo.png" alt="Logo de l'application" width="100"></a>
+      <nav class="Liens-navigation">
+        <a href="../accueil/index.html" class="active">Accueil</a>
+        <a href="../recherche/recherche.html">Rechercher un trajet</a>
+        <a href="../trajet/trajet.html">Trajet</a>
+        <a href="#a-propos">A propos</a>
+        <a href="#aide">Aide</a>
+      </nav>
+      <div class="actions-header">
+        <a href="../login/login.html" class="btn-connexion">Se connecter</a>
+        <a href="../inscription/inscription.html" class="btn-inscription">S'inscrire</a>
+      </div>
+    </div>
+    <div id="nav-session"></div>
+  </header>
 
   <main>
     <!-- =====================================================================
@@ -26,6 +55,157 @@
          principe (mise en relation conducteurs/passagers à Brazzaville),
          bouton d'appel à l'action vers la page Recherche.
          ===================================================================== -->
+    <section class="hero">
+      <div class="hero-section-slider">
+        <div class="caption active" style="background-image: url('../images/accueil/slide-1.png');">
+          <div class="hero-grid hero-caption-slider">
+            <div class="hero-caption">
+              <span class="badge">
+                Voyagez ensemble, dépensez moins.
+              </span>
+
+              <h1 class="titre"><span class="primary">Nzela-Nzela</span> : Partage ta voiture, partage ta route</h1>
+              <p class="desc"><strong>Nzéla-Nzéla</strong> met en relation des conducteurs et des passagers qui
+                effectuent le même trajet. Réservez ou proposez un covoiturage en toute simplicité pour voyager plus
+                facilement entre les quartiers de votre ville.</p>
+              <div class="hero-cta">
+                <a href="../recherche/recherche.html" class="bouton bouton-primary">
+                  <i class="lnr lnr-magnifier"></i>
+                  Rechercher un trajet
+                </a>
+                <a href="../proposer/proposer.html" class="bouton bouton-secondary">
+                  <i class="lnr lnr-map"></i>
+                  Proposer un trajet
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="caption" style="background-image: url('../images/accueil/slide-2.png');">
+          <div class="hero-grid hero-caption-slider">
+            <div class="hero-caption">
+              <span class="badge">
+                Covoiturage inter-quartiers
+              </span>
+              <h2 class="titre">Le covoiturage qui rapproche les quartiers.</h2>
+              <p class="desc">Se deplacer en toute confiance avec des conducteurs vérifiés, partagez les frais de
+                transport et gagnez du temps sur vos déplacements quotidiens au Congo.</p>
+              <div class="hero-cta">
+                <a href="#recherche" class="bouton bouton-primary">
+                  <i class="lnr lnr-magnifier"></i>
+                  Rechercher un trajet
+                </a>
+                <a href="#" class="bouton bouton-secondary">
+                  <i class="lnr lnr-map"></i>
+                  Proposer un trajet
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="caption" style="background-image: url('../images/accueil/slide-3.png');">
+          <div class="hero-grid hero-caption-slider">
+            <div class="hero-caption">
+              <span class="badge">
+                Covoiturage inter-quartiers
+              </span>
+              <h2 class="titre">Chaque trajet est plus agréable lorsqu'il est partagé.</h2>
+              <p class="desc">Rejoignez une communauté de conducteurs et de passagers qui se déplacent dans la même
+                direction. Voyagez en toute confiance, partagez vos frais et créez de nouvelles connexions au quotidien.
+              </p>
+              <div class="hero-cta">
+                <a href="#recherche" class="bouton bouton-primary">
+                  <i class="lnr lnr-magnifier"></i>
+                  Rechercher un trajet
+                </a>
+                <a href="#" class="bouton bouton-secondary">
+                  <i class="lnr lnr-map"></i>
+                  Proposer un trajet
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMULAIRE DE RECHERCHE DE TRAJET -->
+      <div class="content" id="recherche">
+        <form class="search-form" method="get" action="#">
+          <div class="form-field">
+            <label for="depart">Lieu de départ</label>
+            <div class="input">
+              <i class="lnr lnr-map-marker"></i>
+              <input id="depart" type="text" placeholder="Ex: Kintélé">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="arrivee">Lieu d'arrivée</label>
+            <div class="input">
+              <i class="lnr lnr-map-marker"></i>
+              <input id="arrivee" type="text" placeholder="Ex: Talangaï">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="date">Date</label>
+            <div class="input">
+              <i class="lnr lnr-calendar-full"></i>
+              <input id="date" type="date" value="2026-08-02">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="heure">Heure</label>
+            <div class="input">
+              <i class="lnr lnr-clock"></i>
+              <input id="heure" type="time" value="10:00">
+            </div>
+          </div>
+          <button type="submit" class="bouton bouton-primary search-bouton">
+            <i class="lnr lnr-magnifier"></i>
+            Rechercher
+          </button>
+        </form>
+        <!-- Feature strip -->
+        <div class="features">
+          <div class="feature-item border-r">
+            <div class="icon-circle">
+              <i class="lnr lnr-checkmark-circle"></i>
+            </div>
+            <div>
+              <h3 class="titre">Sécurité</h3>
+              <p>Profils vérifiés, pièce d'identité contrôlée et note visible avant chaque trajet.</p>
+            </div>
+          </div>
+          <div class="feature-item border-r">
+            <div class="icon-circle">
+              <i class="lnr lnr-layers"></i>
+            </div>
+            <div>
+              <h3 class="titre">Économique</h3>
+              <p>Partagez le carburant avec d'autres passagers, jusqu'à 3 fois moins cher qu'un taxi.</p>
+            </div>
+          </div>
+          <div class="feature-item border-r">
+            <div class="icon-circle">
+              <i class="lnr lnr-leaf"></i>
+            </div>
+            <div>
+              <h3 class="titre">Écologique</h3>
+              <p>Moins de véhicules sur la route, c'est moins d'embouteillages et moins de pollution.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="icon-circle">
+              <i class="lnr lnr-users"></i>
+            </div>
+            <div>
+              <h3 class="titre">Convivial</h3>
+              <p>Voyagez avec des habitants de votre quartier et créez de nouvelles connaissances.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- =====================================================================
          CARTES INDICATEURS — TODO (Dev FS1)
@@ -36,7 +216,31 @@
          *** NE PAS MODIFIER les id ci-dessous — main.js les utilise pour
          injecter les valeurs calculées par le backend ***
          ===================================================================== -->
-    <section>
+
+    <section class="statistiques">
+      <div class="content">
+        <div class="stats-inner">
+          <div class="counter">
+            <h2 class="num valeur" id="nb-trajets-aujourdhui"></h2>
+            <p class="lbl valeur">Trajets aujourd'hui</p>
+          </div>
+          <div class="counter">
+            <h2 class="num valeur" id="quartier-principal"></h2>
+            <p class="lbl">Quartier le plus actif</p>
+          </div>
+          <div class="counter">
+            <h2 class="num valeur" id="nb-conducteurs"></h2>
+            <p class="lbl">Conducteurs actifs</p>
+          </div>
+          <div class="counter">
+            <h2 class="num valeur" id="note-moyenne"></h2>
+            <p class="lbl">Note moyenne</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--<section>
       <div class="carte-indicateur">
         <p class="label">Trajets aujourd'hui</p>
         <p id="nb-trajets-aujourdhui" class="valeur"></p>
@@ -53,7 +257,7 @@
         <p class="label">Note moyenne</p>
         <p id="note-moyenne" class="valeur"></p>
       </div>
-    </section>
+    </section>-->
 
     <!-- =====================================================================
          COMMENT ÇA MARCHE — TODO (Dev FS1)
@@ -61,20 +265,436 @@
          trajet → réserver une place → rejoindre le conducteur. Layout en
          ligne sur desktop, empilé sur mobile.
          ===================================================================== -->
+    <section class="section section-etapes">
+      <div class="content">
+        <div class="section-head center">
+          <span class="eyebrow">Trois étapes</span>
+          <h2>Comment ça marche</h2>
+          <p>Que vous cherchiez un trajet ou proposiez le vôtre, tout se passe en trois étapes simples.</p>
+        </div>
+        <div class="etapes">
+          <div class="etapes-track">
+            <div class="etapes-line"></div>
+            <div class="etape-card">
+              <div class="etape-badge">
+                <i class="lnr lnr-magnifier"></i>
+                <span class="etape-no">1</span>
+              </div>
+              <h3>Recherchez ou proposez</h3>
+              <p>Indiquez votre départ, votre arrivée et l'heure — ou publiez votre trajet en tant que conducteur en
+                quelques secondes.
+              </p>
+            </div>
+            <div class="etape-card">
+              <div class="etape-badge">
+                <i class="lnr lnr-checkmark-circle"></i>
+                <span class="etape-no">2</span>
+              </div>
+              <h3>Réservez votre place</h3>
+              <p>Choisissez un trajet qui vous convient et envoyez une demande. Le conducteur la confirme, et votre
+                place
+                est réservée.
+              </p>
+            </div>
+            <div class="etape-card">
+              <div class="etape-badge">
+                <i class="lnr lnr-car"></i>
+                <span class="etape-no">3</span>
+              </div>
+              <h3>Voyagez ensemble</h3>
+              <p>Retrouvez-vous au point de départ, partagez le trajet et réglez votre part directement au conducteur.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- =====================================================================
-         POURQUOI BRACOVOIT — TODO (Dev FS1)
+         POURQUOI Nzéla-Nzéla — TODO (Dev FS1)
          3 arguments clés (économique, écologique, communautaire par
          exemple). Layout en grille de cartes.
          ===================================================================== -->
+    <section class="section gray">
+      <div class="content">
+        <div class="section-head">
+          <span class="eyebrow">Pourquoi Nzéla-Nzéla</span>
+          <h2>Les avantages du covoiturage entre quartiers</h2>
+          <p>Un trajet partagé, c'est plus économique, plus rapide et plus humain.</p>
+        </div>
+        <div class="advantages-grid">
+          <div class="advantage-card">
+            <div class="icon-circle">
+              <i class="lnr lnr-checkmark-circle"></i>
+            </div>
+            <h4>Voyagez en toute confiance</h4>
+            <p>Chaque trajet est réalisé avec des utilisateurs et des conducteurs vérifiés . Consultez les profils,
+              échangez avant le départ et profitez d'une expérience de covoiturage plus sereine.</p>
+          </div>
+          <div class="advantage-card">
+            <div class="icon-circle">
+              <i class="lnr lnr-layers"></i>
+            </div>
+            <h4>Réduisez vos dépenses</h4>
+            <p>Partagez les frais de transport avec d'autres voyageurs et réalisez des économies sur chacun de vos
+              déplacements, sans compromettre votre confort.</p>
+          </div>
+          <div class="advantage-card">
+            <div class="icon-circle">
+              <i class="lnr lnr-leaf"></i>
+            </div>
+            <h4>Un geste pour notre pays</h4>
+            <p>En partageant un même véhicule, vous contribuez à réduire le nombre de voitures sur les routes, les
+              embouteillages et les pollutions sur la route.</p>
+          </div>
+          <div class="advantage-card">
+            <div class="icon-circle">
+              <i class="lnr lnr-users"></i>
+            </div>
+            <h4>Créez des liens</h4>
+            <p>Voyagez avec des personnes qui empruntent le même itinéraire et profitez d'une expérience plus humaine,
+              conviviale et solidaire.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== EXPLICATION : c'est quoi le covoiturage ===================== -->
+    <section class="section gray">
+      <div class="content">
+        <div class="explication">
+          <div class="explication-text">
+            <span class="eyebrow">Le concept, en clair</span>
+            <h2>C'est quoi, le covoiturage inter-quartiers ?</h2>
+            <div class="define-box">
+              <i class="lnr lnr-unlink"></i>
+              <p><strong>Covoiturer</strong>, c'est simplement partager une voiture qui va déjà là où vous allez. Un
+                conducteur propose les places libres de son véhicule, et des passagers du même quartier montent avec lui
+                en partageant les frais d'essence.</p>
+            </div>
+            <div class="explication-points">
+              <div class="point">
+                <i class="lnr lnr-user"></i>
+                <p><strong>Un conducteur publie son trajet</strong> — d'où il part, où il va, à quelle heure, et combien
+                  de places il a.</p>
+              </div>
+              <div class="point">
+                <i class="lnr lnr-magnifier"></i>
+                <p><strong>Un passager cherche un trajet</strong> qui correspond à son itinéraire, et demande une place.
+                </p>
+              </div>
+              <div class="point">
+                <i class="lnr lnr-car"></i>
+                <p><strong>Les deux voyagent ensemble</strong> et partagent simplement le coût du trajet — moins cher
+                  qu'un taxi, plus rapide qu'un bus.</p>
+              </div>
+            </div>
+          </div>
+          <div class="explication-cars">
+            <img src="../images/accueil/slide-3.png" class="responsive">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONFIANCE / SÉCURITÉ ===================== -->
+    <section class="section section-etapes gray">
+      <div class="content">
+        <div class="confiance">
+          <div>
+            <img src="../images/accueil/slide-4.png" class="responsive"
+              alt="conducteur et passager se saluant avant un trajet de covoiturage">
+          </div>
+          <div>
+            <span class="eyebrow">Confiance avant tout</span>
+            <h2>Chaque trajet, en toute confiance</h2>
+            <p>Avant de monter dans une voiture, vous
+              savez toujours qui conduit, avec quel véhicule, et ce qu'en pensent les autres passagers.</p>
+            <div class="confiance-list">
+              <div class="confiance-item">
+                <div class="icon-circle">
+                  <i class="lnr lnr-checkmark-circle"></i>
+                </div>
+                <div>
+                  <h4>Identité vérifiée</h4>
+                  <p>Chaque conducteur confirme son identité et son permis de conduire.</p>
+                </div>
+              </div>
+              <div class="confiance-item">
+                <div class="icon-circle">
+                  <i class="lnr lnr-car"></i>
+                </div>
+                <div>
+                  <h4>Véhicule renseigné</h4>
+                  <p>Marque, couleur et immatriculation visibles avant le départ.</p>
+                </div>
+              </div>
+              <div class="confiance-item">
+                <div class="icon-circle">
+                  <i class="lnr lnr-bubble"></i>
+                </div>
+                <div>
+                  <h4>Avis après chaque trajet</h4>
+                  <p>Conducteurs et passagers se notent mutuellement, en toute transparence.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA FINAL ===================== -->
+    <section class="section section-pt-0">
+      <div class="content">
+        <div class="final-cta">
+          <div class="final-cta-text">
+            <h2>Prêt à prendre la route ?</h2>
+            <p>Trouvez un trajet dès aujourd'hui, ou proposez le vôtre et faites des rencontres dans votre quartier.</p>
+          </div>
+          <div class="final-cta-actions">
+            <a href="#recherche" class="bouton bouton-primary">Rechercher un trajet</a>
+            <a href="#" class="bouton bouton-secondary">Proposer un trajet</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-faq">
+      <div class="content">
+
+        <div class="section-head center">
+          <span class="eyebrow">Questions fréquentes</span>
+          <h2>FAQ Covoiturage</h2>
+          <p>
+            Retrouvez les réponses aux questions les plus fréquentes
+            concernant le covoiturage avec Nzéla-Nzéla.
+          </p>
+        </div>
+
+        <div class="faq grid-deux">
+
+          <div class="block">
+            <h3>Comment réserver vous un covoiturage ?</h3>
+            <p class="card-text">
+              Recherchez votre trajet, choisissez un conducteur à un prix qui vous convient,
+              puis confirmez votre réservation en quelques clics.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>Combien coûte un trajet en covoiturage ?</h3>
+            <p class="card-text">
+              Le prix est fixé à l'avance et partagé entre les passagers par le conducteur,
+              pour un trajet transparent et sans surprise.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>Comment puis-je modifier mon itinéraire ?</h3>
+            <p class="card-text">
+              Vous pouvez modifier votre trajet avant qu'il ne soit confirmé sur la plateforme
+              par les passagers ou conducteurs depuis votre tableau de bord.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>Comment fixer le prix de mon trajet ?</h3>
+            <p class="card-text">
+              Lorsque vous publiez un trajet, Nzela-Nzela vous recommande un prix par place
+              en fonction de la distance, des points de départ et d'arrivée, ainsi que des
+              frais de transport (carburant, usure du véhicule, etc.). Vous restez libre
+              d'accepter cette recommandation selon les règles de la plateforme.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>Comment commencer à covoiturer ?</h3>
+            <p class="card-text">
+              Créez gratuitement votre compte, complétez votre profil et commencez à réserver
+              ou proposer des trajets.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>Comment assurer ma sécurité ?</h3>
+            <p class="card-text">
+              Consultez les profils des utilisateurs, échangez avant le départ et privilégiez
+              les lieux de rendez-vous publics. Tous nos conducteurs sont répertoriés et
+              vérifiés sur notre plateforme Nzela-Nzela.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>Comment proposer un trajet de covoiturage ?</h3>
+            <p class="card-text">
+              Indiquez votre point de départ, votre destination, l'heure de départ et le nombre
+              de places disponibles, puis publiez votre trajet.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>Comment annuler mon trajet de covoiturage ?</h3>
+            <p class="card-text">
+              Vous pouvez annuler votre réservation ou votre trajet directement depuis votre
+              espace personnel avant le départ.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>Comment trouver mon conducteur ?</h3>
+            <p class="card-text">
+              Après votre réservation, vous accédez aux informations du conducteur ainsi qu'au
+              point de rendez-vous convenu.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>Comment proposer un trajet de covoiturage ?</h3>
+            <p class="card-text">
+              Indiquez votre point de départ, votre destination, l'heure de départ et le nombre
+              de places disponibles, puis publiez votre trajet.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>Comment annuler mon trajet de covoiturage ?</h3>
+            <p class="card-text">
+              Vous pouvez annuler votre réservation ou votre trajet directement depuis votre
+              espace personnel avant le départ.
+            </p>
+          </div>
+
+          <div class="block">
+            <h3>Comment trouver mon conducteur ?</h3>
+            <p class="card-text">
+              Après votre réservation, vous accédez aux informations du conducteur ainsi qu'au
+              point de rendez-vous convenu.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER — TODO (Dev FS1) : liens utiles, mentions -->
-
   <div id="erreur-globale" hidden></div>
+  <footer id="footer-global">
+
+
+    <div class="footer-container">
+
+      <div class="footer-col footer-about">
+        <div class="footer-logo">
+          <a href="../accueil/index.html" id="logo-link"><img src="../images/logo.png" alt="Logo de l'application" width="100"></a>
+          <strong>Nzéla-Nzéla</strong>
+        </div>
+        <p>Nzéla-Nzéla: Partage ta voiture, partage ta route</p>
+
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Colonne 2 : Navigation -->
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="../accueil/index.html">Accueil</a></li>
+          <li><a href="../recherche/recherche.html">Rechercher un trajet</a></li>
+          <li><a href="../proposer/proposer.html">Proposer un trajet</a></li>
+          <li><a href="#a-propos">À propos</a></li>
+          <li><a href="#aide">Aide</a></li>
+        </ul>
+      </div>
+
+      <!-- Colonne 3 : Ressources -->
+      <div class="footer-col">
+        <h3>Ressources</h3>
+        <ul>
+          <li><a href="#">Sécurité</a></li>
+          <li><a href="#">Conditions d'utilisation</a></li>
+          <li><a href="#">Confidentialité</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Colonne 4 : Contact -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="contact-list">
+          <li>contact@nzela-nzela.com</li>
+          <li>+242 06 123 45 67</li>
+          <li>Brazzaville, Congo</li>
+        </ul>
+      </div>
+
+
+    </div>
+    <!-- Bas du footer (Copyright & Crédits) -->
+    <div class="footer-bottom">
+      <p>© 2026 Nzéla-Nzéla. Tous droits réservés.</p>
+
+    </div>
+
+  </footer>
+
+
 
   <!-- NE PAS MODIFIER — scripts de connexion au backend -->
   <script src="../functions.js"></script>
   <script src="../main.js"></script>
+  <script>
+    /** Notre slider: des images qui défilent avec javascription **/
+    const heroCaptions = document.querySelectorAll(
+      ".hero-section-slider .caption"
+    );
+
+    let currentCaption = 0;
+    let captionInterval;
+
+    function afficherCaption(index) {
+      heroCaptions[currentCaption].classList.remove("active");
+
+      currentCaption = index;
+
+      heroCaptions[currentCaption].classList.add("active");
+    }
+
+    function captionSuivante() {
+      const next = (currentCaption + 1) % heroCaptions.length;
+
+      afficherCaption(next);
+    }
+
+    function demarrerSlider() {
+      captionInterval = setInterval(captionSuivante, 5000);
+    }
+
+    function arreterSlider() {
+      clearInterval(captionInterval);
+    }
+
+    function redemarrerSlider() {
+      arreterSlider();
+      demarrerSlider();
+    }
+
+    // Premier slide actif
+    if (heroCaptions.length > 0) {
+      heroCaptions[0].classList.add("active");
+    }
+
+    // Démarrage automatique
+    if (heroCaptions.length > 1) {
+      demarrerSlider();
+    }
+  </script>
 </body>
+
 </html>

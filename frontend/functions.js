@@ -17,7 +17,6 @@
 // ============================================================================
 // Dev FS1 — page Accueil
 // ============================================================================
-
 function compterTrajetsAujourdhui(trajets, dateAujourdhui) {
     /**
      * Compte le nombre de trajets prévus pour la date donnée.
@@ -27,6 +26,9 @@ function compterTrajetsAujourdhui(trajets, dateAujourdhui) {
      * Exemple : compterTrajetsAujourdhui([{date:"2026-07-27"},{date:"2026-07-28"}], "2026-07-27") → 1
      */
     // TODO
+    const aujourdHui = new Date().toISOString().split('T')[0];
+
+    return trajets.filter(trajet => trajet.date === aujourdHui).length;
 }
 
 function formaterQuartierPrincipal(compteParQuartier) {
@@ -37,6 +39,16 @@ function formaterQuartierPrincipal(compteParQuartier) {
      * Si l'objet est vide, retourne "Aucun trajet".
      */
     // TODO
+    if (Object.keys(compteParQuartier).length === 0) {
+        return "Aucun trajet";
+    }
+
+    const [quartierPrincipal, nombreTrajets] = Object.entries(compteParQuartier)
+        .reduce((max, actuel) => {
+            return actuel[1] > max[1] ? actuel : max;
+        });
+
+    return `${quartierPrincipal} (${nombreTrajets} trajets)`;
 }
 
 // ============================================================================
@@ -52,6 +64,11 @@ function filtrerParQuartierDepart(trajets, quartier) {
      * Si quartier est vide ou null, retourne tous les trajets.
      */
     // TODO
+    if(!quartier){
+        return trajets;
+    }
+    const trajetsFiltres = trajets.filter(trajet => trajet.quartier_depart === quartier);
+    return trajetsFiltres;
 }
 
 function rechercherParMotCle(trajets, motCle) {
@@ -64,6 +81,15 @@ function rechercherParMotCle(trajets, motCle) {
      * Si motCle est vide, retourne tous les trajets.
      */
     // TODO
+    if (!motCle){
+        return trajets;
+    }
+    return trajets.filter((trajet) => 
+        trajet.quartier_depart.toLowerCase().includes(motCle.toLowerCase()) ||
+        trajet.quartier_arrivee.toLowerCase().includes(motCle.toLowerCase()) ||
+        trajet.commentaire.toLowerCase().includes(motCle.toLowerCase())
+
+    );
 }
 
 // ============================================================================
@@ -78,6 +104,15 @@ function formaterPrix(prix) {
      * Exemple : formaterPrix(500) → "500 FCFA", formaterPrix(1500) → "1 500 FCFA"
      */
     // TODO
+    
+    if(prix === null || prix === undefined || prix === '') {
+            return '0 FCFA';
+    }
+    const nombre = Number(prix);
+    if (isNaN(nombre)) {
+            return '0 FCFA';
+    }
+        return new Intl.NumberFormat('fr-FR').format(nombre) + ' FCFA';
 }
 
 function formaterHeure(heure) {
@@ -87,6 +122,14 @@ function formaterHeure(heure) {
      * @return {string} - "07h30"
      */
     // TODO
+    if (!heure) return '--h--';
+    const parties=String(heure).split(':');
+    if (parties.length < 2 ) return heure;
+    const heures = parties[0].padStart(2, '0');
+    const minutes = parties[1].padStart(2, '0');
+    return `${heures}h${minutes}`;
+    
+
 }
 
 // ============================================================================
@@ -161,6 +204,11 @@ function calculerPourcentageOccupation(placesOccupees, placesTotales) {
      * Si placesTotales est 0, retourne 0.
      */
     // TODO
+    if (placesTotales === 0) {
+        return 0;
+    }
+    const pourcentage = (placesOccupees / placesTotales) * 100;
+    return Math.round(pourcentage);
 }
 
 function getBadgeDisponibilite(placesRestantes) {
@@ -175,6 +223,13 @@ function getBadgeDisponibilite(placesRestantes) {
      * - 2+ places → {libelle: "N places", classe: "badge-dispo"}  (N = placesRestantes)
      */
     // TODO
+    if (placesRestantes === 0) {
+        return { libelle: "Complet", classe: "badge-complet" };
+    } else if (placesRestantes === 1) {
+        return { libelle: "1 place", classe: "badge-limite" };
+    } else {
+        return { libelle: `${placesRestantes} places`, classe: "badge-dispo" };
+    }
 }
 
 // ============================================================================
@@ -193,6 +248,27 @@ function validerFormulaireInscription(formulaire) {
      * - mot_de_passe obligatoire, au moins 4 caractères
      */
     // TODO
+
+    const erreurs = [];
+
+    if (!formulaire.nom || formulaire.nom.trim() === "") {
+        erreurs.push("Le nom est obligatoire.");
+    }
+
+    const telephone = formulaire.telephone ? formulaire.telephone.trim() : "";
+    const chiffres = telephone.replace(/\D/g, ""); // Retire tout sauf les chiffres
+    if (!telephone) {
+        erreurs.push("Le téléphone est obligatoire.");
+    } else if (chiffres.length < 9) {
+        erreurs.push("Le téléphone doit contenir au moins 9 chiffres.");
+    }
+
+    if (!formulaire.mot_de_passe){
+        erreurs.push("Le mot de passe est obligatoire.");
+    } else if (formulaire.mot_de_passe.length < 4) {
+        erreurs.push("Le mot de passe doit contenir au moins 4 caractères.");
+    }
+    return { valide: erreurs.length === 0, erreurs };
 }
 
 function validerFormulaireLogin(formulaire) {
@@ -206,6 +282,27 @@ function validerFormulaireLogin(formulaire) {
      * - mot_de_passe obligatoire
      */
     // TODO
+    const erreurs = [];
+
+    const telephone = (formulaire.telephone || "").trim();
+    const motDePasse = (formulaire.mot_de_passe || "").trim();
+
+    if (telephone === "") {
+        erreurs.push("Le téléphone est obligatoire.");
+    } else if (!/^0[4-6]\d{7}$/.test(telephone)) {
+        erreurs.push("Le téléphone doit être un numéro valide (ex : 066123456).");
+    }
+
+    if (motDePasse === "") {
+        erreurs.push("Le mot de passe est obligatoire.");
+    } else if (motDePasse.length < 6) {
+        erreurs.push("Le mot de passe doit contenir au moins 6 caractères.");
+    }
+
+    return {
+        valide: erreurs.length === 0,
+        erreurs: erreurs
+    };
 }
 
 // ============================================================================

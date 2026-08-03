@@ -1,0 +1,528 @@
+/* =========================================================
+   Nzéla-Nzéla — inscription.css
+   Conforme à la charte graphique du projet — variables uniquement,
+   aucune couleur codée en dur.
+   ========================================================= */
+
+:root {
+  /* Verts principaux */
+  --color-primary: #146c43;
+  --color-primary-dark: #0d3b26;
+  --color-primary-light: #e6f4ea;
+
+  /* Neutres */
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b7280;
+  --color-border: #e2e5e9;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f8f9fa;
+
+  /* États / accents */
+  --color-warning: #f5b301;
+  --color-success: #16a34a;
+  --color-danger: #dc2626;
+
+  /* Footer */
+  --color-footer-bg: #0d3320;
+  --color-footer-text: #ffffff;
+  --color-footer-text-muted: #b9c9bf;
+
+  /* Typographie */
+  --font-family: -apple-system, "Segoe UI", Roboto, Inter, sans-serif;
+  --font-size-h1: 2.25rem;
+  --font-size-h2: 1.5rem;
+  --font-size-h3: 1.125rem;
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+
+  /* Grille & espacements */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+
+  --container-max-width: 1200px;
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text);
+  background: var(--color-bg-alt);
+}
+
+header{
+  z-index: 100;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/*img */
+
+#nav-session1 img {
+    max-width: 60px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ---------- Header / Nav ---------- */
+
+.nn-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nn-nav {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.nn-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-right: auto;
+}
+
+.nn-logo-icon { width: 30px; height: 30px; flex-shrink: 0; }
+
+.nn-logo-text {
+  display: flex;
+  flex-direction: column;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-h3);
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+.nn-logo-text small {
+  font-weight: var(--font-weight-regular);
+  font-size: 0.68rem;
+  color: var(--color-primary);
+}
+
+.nn-links {
+  list-style: none;
+  display: flex;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+}
+
+.nn-links a {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.nn-links a:hover { color: var(--color-primary); }
+
+.nn-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.nn-theme-toggle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nn-theme-toggle svg { width: 16px; height: 16px; }
+
+/* nav-session : conteneur injecté par main.js (boutons connexion/inscription
+   ou avatar utilisateur selon l'état de session). On lui laisse assez
+   d'espace pour accueillir soit des boutons, soit un menu utilisateur. */
+#nav-session {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 38px;
+  font-size: var(--font-size-small);
+  color: var(--color-text); 
+  margin-left: auto;
+}
+
+/* Boutons que main.js peut injecter dans #nav-session — prêts à l'emploi
+   pour rester cohérents avec le reste du site. */
+#nav-session .btn-primary,
+#nav-session .btn-secondary {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-small);
+}
+
+/* ---------- Layout principal ---------- */
+
+.nn-main {
+  max-width: var(--container-max-width);
+  margin: var(--space-6) auto;
+  padding: 0 var(--space-4);
+}
+
+.nn-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-6);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+/* ---------- Colonne intro ---------- */
+
+.nn-intro h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0 0 var(--space-2);
+}
+
+.nn-intro-lead {
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-5);
+}
+
+.nn-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.nn-features li {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.nn-feature-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nn-feature-icon svg { width: 20px; height: 20px; }
+
+.nn-features strong {
+  display: block;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.nn-features p {
+  margin: 0;
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* ---------- Colonne formulaire ---------- */
+
+.nn-form-section h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin: 0 0 var(--space-1);
+}
+
+.nn-form-lead {
+  margin: 0 0 var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+.nn-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.nn-field label {
+  display: block;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.nn-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nn-input-icon {
+  position: absolute;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.nn-input-wrap input {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-body);
+  font-family: inherit;
+  color: var(--color-text);
+  background: var(--color-bg);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.nn-input-wrap input::placeholder { color: var(--color-text-muted); }
+
+.nn-input-wrap input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+/* Aide à la validation en direct du mot de passe (coche verte quand
+   validé, gris sinon) — la logique d'activation est gérée par main.js,
+   ici uniquement le style des deux états. */
+.nn-password-rules {
+  list-style: none;
+  margin: var(--space-1) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+}
+
+.nn-password-rules li::before {
+  content: "○";
+  display: inline-block;
+  width: 14px;
+  color: var(--color-text-muted);
+}
+
+.nn-password-rules li.valid {
+  color: var(--color-success);
+}
+
+.nn-password-rules li.valid::before {
+  content: "✓";
+  color: var(--color-success);
+}
+
+/* ---------- Boutons ---------- */
+
+.btn-primary {
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  background: var(--color-primary);
+  color: #fff;
+  font-family: inherit;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-primary:hover { background: var(--color-primary-dark); }
+
+.btn-secondary {
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  background: transparent;
+  color: var(--color-primary);
+  font-family: inherit;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-secondary:hover { background: var(--color-primary-light); }
+
+.nn-btn-primary { width: 100%; margin-top: var(--space-1); }
+
+.nn-switch {
+  margin-top: var(--space-4);
+  text-align: center;
+  font-size: var(--font-size-small);
+  color: var(--color-text-muted);
+}
+
+.nn-switch a {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.nn-switch a:hover { text-decoration: underline; }
+
+/* ---------- Alertes / erreurs (injectées par main.js) ---------- */
+
+.nn-alert {
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  font-size: var(--font-size-small);
+  margin-top: var(--space-2);
+}
+
+.nn-alert ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.nn-alert-error {
+  background: color-mix(in srgb, var(--color-danger) 8%, white);
+  border: 1px solid color-mix(in srgb, var(--color-danger) 30%, white);
+  color: var(--color-danger);
+}
+
+.nn-alert-global {
+  position: fixed;
+  top: var(--space-3);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  background: color-mix(in srgb, var(--color-danger) 8%, white);
+  border: 1px solid color-mix(in srgb, var(--color-danger) 30%, white);
+  color: var(--color-danger);
+  box-shadow: var(--shadow-card);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+  .nn-links { display: none; }
+
+  .nn-card {
+    grid-template-columns: 1fr;
+    padding: var(--space-5);
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 480px) {
+  .nn-card { padding: var(--space-4); border-radius: var(--radius-md); }
+  .nn-nav { padding: var(--space-3) var(--space-3); }
+}
+
+
+/* ---------- Divider "ou" + bouton Google ---------- */
+
+.nn-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
+.nn-divider::before,
+.nn-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.btn-google {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px 20px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-google svg { width: 18px; height: 18px; }
+
+.btn-google:hover { background: var(--color-bg-alt); }
+
+/* ---------- Illustration voiture / ville ---------- */
+
+.nn-illustration {
+  width: 100%;
+  height: auto;
+  margin-top: var(--space-5);
+}
+
+
+/* Checkbox CGU */
+ 
+.nn-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: var(--space-4) 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+ 
+.nn-checkbox input {
+  margin-top: 3px;
+  accent-color: var(--color-primary);
+}
+ 
+.nn-checkbox a {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+}
+ 
+.nn-checkbox a:hover {
+  text-decoration: underline;
+}
+
+/* nav session style */
+
+#nav-session{
+  display: none;
+}

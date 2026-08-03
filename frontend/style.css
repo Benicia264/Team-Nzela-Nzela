@@ -1,0 +1,385 @@
+/* =========================================================
+   1. CHARTE GRAPHIQUE & TYPOGRAPHIE GLOBALE
+   ========================================================= */
+:root {
+  --primary-color: #146c43;
+  --primary-hover: #0d3b26;
+  --primary-light: #e6f4ea;
+  --text-main: #044e39;
+  --text-muted: #6b7280;
+  --bg-body: #f8fafc;
+  --card-bg: #ffffff;
+  --border-color: #e2e5e9;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --section-sm-padding: 3rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Police unique pour TOUTE l'application */
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+section {
+  padding: var(--section-sm-padding) !important;
+}
+
+.sub-header-container,
+main {
+  margin: 0 auto;
+  max-width: 100%;
+}
+.sub-header-container{
+  padding-bottom: var(--section-sm-padding);
+}
+
+
+/* =========================================================
+   2. HEADER & NAVIGATION IDENTIQUES PARTOUT
+   ========================================================= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: index 9999!important;
+}
+
+#nav-session1 {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+  padding: 0 var(--section-sm-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  flex-wrap: wrap;
+  gap: 1.25rem;
+
+}
+
+#nav-session1 img {
+  max-width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+#nav-session1 a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.4s;
+}
+
+#nav-session1 a:hover {
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+}
+#nav-session1 #logo-link:hover{
+  border-bottom: none!important;
+}
+#nav-session1 .Liens-navigation a{
+  border-bottom: 3px solid transparent;
+}
+#nav-session1 .Liens-navigation a:hover {
+  border-bottom: 3px solid var(--primary-color);
+}
+#nav-session1 .Liens-navigation a.active
+ {
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+}
+#nav-session {
+  display: none;
+}
+
+/* Alignement des liens centraux et des boutons */
+
+
+.Liens-navigation {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.actions-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-connexion {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color) !important;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600 !important;
+}
+
+.btn-connexion:hover {
+  background-color: var(--primary-light);
+}
+
+.btn-inscription {
+  background-color: var(--primary-color);
+  color: #ffffff !important;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600 !important;
+}
+
+.btn-inscription:hover {
+  background-color: var(--primary-hover);
+}
+.regles-trajet h2,
+.details-trajet h2{
+  margin-top: 0;
+  margin-bottom: 1.3rem;
+  font-size: 1.3rem;
+}
+section.card{
+  padding: 1.5rem!important;
+}
+/* =========================================================
+   3. FOOTER IDENTIQUE PARTOUT
+   ========================================================= */
+#footer-global {
+  background-color: var(--text-main);
+  /* Utilise la teinte sombre globale */
+  color: var(--card-bg);
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--section-sm-padding);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.footer-col h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: var(--card-bg);
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-col a,
+.contact-list li {
+  color: var(--border-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: var(--primary-light);
+  text-decoration: underline;
+}
+
+/* Colonne À propos & Logo */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.footer-logo img{
+  width: 60px;
+  height: auto;
+  border-radius: 8px;
+}
+.footer-about p {
+  color: var(--border-color);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+}
+.nn-card{
+  padding: 0;
+}
+/* Réseaux sociaux */
+.footer-socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--card-bg);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.85rem;
+  transition: background-color 0.2s;
+}
+
+.footer-socials a:hover {
+  background-color: var(--primary-color);
+}
+
+/* Copyright tout en bas */
+.footer-bottom {
+  max-width: 1100px;
+  margin: 2.5rem auto 0 auto;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-bottom .heart {
+  color: #ef4444;
+}
+
+/* =========================================================
+   4. DESIGN DE BASE DES CARTES (Uniforme sur toutes les pages)
+   ========================================================= */
+
+[class*="carte-"] {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+[class*="carte-"]:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   5. BADGES DE STATUT & MESSAGES D'ERREUR COMMUNS
+   ========================================================= */
+/* Badges d'état universels */
+.badge,
+[class*="badge-"],
+[class*="statut-"] {
+  display: inline-block;
+  padding: 0.3rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Messages d'erreur globaux */
+#erreurs-form,
+#erreur-globale {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+.barre-filtres{
+  margin: var(--section-sm-padding);
+}
+#page-recherche #nav-session1{
+  margin-bottom: 0;
+}
+.barre-filtres{
+  margin-top: 0!important;
+  margin-bottom: 0!important;
+}
+.entete-recherche{
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+  margin-top: 0!important;
+  background: white;
+}
+[hidden] {
+  display: none !important;
+}
+/* Responsive */
+@media (max-width: 900px) {
+  .Liens-navigation {
+    display: none;
+    flex-wrap: nowrap;
+  }
+  #nav-session1 {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  #nav-session1{
+    padding: 0 20px;
+  }
+
+  .actions-header {
+    justify-content: end;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+@media (max-width: 800px) {
+
+  .Liens-navigation {
+    justify-content: center;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  #nav-session1 img{
+    width: 60px;
+  }
+  #nav-session1 a{
+    font-size: .9rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+  section{
+    padding: 20px!important;
+  }
+}

@@ -1,80 +1,489 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BraCovoit — Détail du trajet</title>
+  <title>Nzéla-Nzéla — Détail du trajet</title>
+  <link rel="icon" type="image/png" href="../images/logo.png">
   <link rel="stylesheet" href="trajet.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+    integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/fontawesome.min.css"
+    integrity="sha512-WAQldzapOKc+yIZB/g4npsWhF43dQ74uxwR6WkySVIKVGKaVNSuRw19CQeqN2OmYmg34g7TsZv3sh9nsQXYj3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body id="page-trajet">
 
-  <!-- NAVIGATION — TODO (Dev FS3) -->
+  <!-- NAVIGATION -->
+  <header>
+    <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
+    <div id="nav-session1">
+      <a href="../accueil/index.html" id="logo-link"><img src="../images/logo.png" alt="Logo de l'application" width="100"></a>
+      <nav class="Liens-navigation">
+        <a href="../accueil/index.html">Accueil</a>
+        <a href="../recherche/recherche.html">Rechercher un trajet</a>
+        <a href="../trajet/trajet.html" class="active">Trajet</a>
+        <a href="#a-propos">A propos</a>
+        <a href="#aide">Aide</a>
+      </nav>
+      <div class="actions-header">
+        <a href="../login/login.html" class="btn-connexion">Se connecter</a>
+        <a href="../inscription/inscription.html" class="btn-inscription">S'inscrire</a>
+      </div>
+    </div>
+    <div id="nav-session"></div>
+  </header>
 
-  <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
-  <div id="nav-session"></div>
+  <!-- FIL D'ARIANE ET TITRE -->
+  <div class="sub-header-container">
+    <a href="../recherche/recherche.html" class="back-link">← Retour aux résultats</a>
+    <h1 class="page-title">Fiche de trajet</h1>
+    <p class="page-subtitle">Détails complets du trajet sélectionné</p>
+  </div>
 
   <main>
     <!-- =====================================================================
-         ENTÊTE TRAJET — TODO (Dev FS3)
-         Mettre en forme le titre du trajet, l'heure, la date, le prix, le
-         commentaire éventuel et le badge de disponibilité. Le badge reçoit
-         dynamiquement une classe parmi badge-dispo / badge-limite /
-         badge-complet — prévoyez les 3 styles.
-
-         *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
+         COLONNE GAUCHE (Détails du trajet + Avis)
          ===================================================================== -->
-    <section class="entete-trajet">
-      <h1 id="trajet-titre"></h1>
-      <p>Heure : <span id="trajet-heure"></span></p>
-      <p>Date : <span id="trajet-date"></span></p>
-      <p>Prix : <span id="trajet-prix"></span></p>
-      <p>Commentaire : <span id="trajet-commentaire"></span></p>
-      <span id="badge-places" class="badge"></span>
-    </section>
+    <div class="col-main">
+
+      <!-- CARTE VISUELLE DU TRAJET -->
+      <section class="entete-trajet card">
+        <div class="card-header-top">
+          <!-- NE PAS MODIFIER LES ID CI-DESSOUS — main.js LES UTILISE -->
+          <span id="badge-places" class="badge"></span>
+          <button type="button" class="btn-fav"><i class="far fa-heart"></i> Ajouter aux favoris</button>
+        </div>
+
+        <div class="trajet-visual-container">
+          <div class="timeline">
+            <div class="time-step">
+              <span class="time-dot start"></span>
+              <div class="time-info">
+                <!-- ID conservé -->
+                <span id="trajet-heure" class="time"></span>
+                <div class="place-details">
+                  <!-- ID conservé -->
+                  <h2 id="trajet-titre" class="city-name"></h2>
+                  <span class="sub-place">Arrêt école</span>
+                  <span class="tag-location"><i class="fas fa-map-marker-alt"></i> Quartier Kintélé</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="time-step">
+              <span class="time-dot end"></span>
+              <div class="time-info">
+                <span class="time">08:15</span>
+                <div class="place-details">
+                  <strong class="city-name">Talangaï</strong>
+                  <span class="sub-place">Rond-point</span>
+                  <span class="tag-location"><i class="fas fa-map-marker-alt"></i> Quartier Talangaï</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARTE GÉOLOCALISATION SVG -->
+          <div class="map-placeholder">
+            <svg class="map-svg" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100%" height="100%" fill="#e5ece9" />
+              <path d="M -10 40 Q 80 90 310 30" stroke="#ffffff" stroke-width="8" fill="none" />
+              <path d="M 50 160 Q 120 40 220 -10" stroke="#ffffff" stroke-width="6" fill="none" />
+
+              <!-- Route Kintélé -> Talangaï -->
+              <path d="M 40 30 C 90 30, 110 90, 240 100" stroke="#0b6b47" stroke-width="4" fill="none"
+                stroke-dasharray="2,2" />
+              <path d="M 40 30 C 90 30, 110 90, 240 100" stroke="#0b6b47" stroke-width="3" fill="none" />
+
+              <!-- Point départ (Kintélé) -->
+              <circle cx="40" cy="30" r="6" fill="#0b6b47" />
+              <circle cx="40" cy="30" r="2.5" fill="#ffffff" />
+              <rect x="15" y="42" width="50" height="16" rx="4" fill="#ffffff" opacity="0.9" />
+              <text x="40" y="53" font-size="8.5" font-weight="bold" fill="#0b6b47" text-anchor="middle">Kintélé</text>
+
+              <!-- Point arrivée (Talangaï) -->
+              <path
+                d="M 240 85 C 235 85, 230 90, 230 96 C 230 105, 240 115, 240 115 C 240 115, 250 105, 250 96 C 250 90, 245 85, 240 85 Z"
+                fill="#0b6b47" />
+              <circle cx="240" cy="95" r="2.5" fill="#ffffff" />
+              <rect x="210" y="120" width="60" height="16" rx="4" fill="#ffffff" opacity="0.9" />
+              <text x="240" y="131" font-size="8.5" font-weight="bold" fill="#0b6b47"
+                text-anchor="middle">Talangaï</text>
+            </svg>
+          </div>
+        </div>
+
+        <!-- GRILLE INFOS RAPIDES -->
+
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <span class="icon">
+              <i class="fas fa-clock"></i>
+            </span>
+            <span class="label">Heure de départ</span>
+            <span class="value">07:30</span>
+          </div>
+          <div class="metric-item">
+            <span class="icon">
+              <i class="fas fa-clock"></i>
+            </span>
+            <span class="label">Heure d'arrivée</span>
+            <span class="value">08:15</span>
+          </div>
+          <div class="metric-item">
+            <span class="icon">
+              <i class="fas fa-hourglass-half"></i>
+            </span>
+            <span class="label">Durée estimée</span>
+            <span class="value">45 min</span>
+          </div>
+          <div class="metric-item">
+            <span class="icon">
+              <i class="fas fa-road"></i>
+            </span>
+            <span class="label">Distance</span>
+            <span class="value">12 km</span>
+          </div>
+          <div class="metric-item">
+            <span class="icon">
+              <i class="fas fa-car"></i>
+            </span>
+            <span class="label">Places disponibles</span>
+            <span class="value">3 places</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOC DÉTAILS DU TRAJET -->
+      <!-- DÉTAILS DU TRAJET -->
+      <section class="details-trajet card">
+        <h2>Détails du trajet</h2>
+        <div class="details-grid">
+          <div class="detail-item">
+            <span class="icon-wrap">
+              <i class="fas fa-calendar-alt"></i>
+            </span>
+            <div>
+              <span class="label">Date du trajet</span>
+              <span id="trajet-date" class="value"></span>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <span class="icon-wrap">
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+            <div>
+              <span class="label">Point de prise en charge</span>
+              <span class="value">Arrêt école de Kintélé</span>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <span class="icon-wrap">
+              <i class="fas fa-comment-alt"></i>
+            </span>
+            <div>
+              <span class="label">Commentaire du conducteur</span>
+              <span id="trajet-commentaire" class="value"></span>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <span class="icon-wrap">
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+            <div>
+              <span class="label">Point de destination</span>
+              <span class="value">Rond-point de Talangaï</span>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <span class="icon-wrap">
+              <i class="fas fa-car"></i>
+            </span>
+            <div>
+              <span class="label">Type de véhicule</span>
+              <span class="value">Toyota Corolla (Grise)</span>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <span class="icon-wrap">
+              <i class="fas fa-chair"></i>
+            </span>
+            <div>
+              <span class="label">Siège proposé</span>
+              <span class="value">À l'arrière</span>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <span class="icon-wrap">
+              <i class="fas fa-smile"></i>
+            </span>
+            <div>
+              <span class="label">Ambiance</span>
+              <span class="value">Calme et respectueuse</span>
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <span class="icon-wrap">
+              <i class="fas fa-times"></i>
+            </span>
+            <div>
+              <span class="label">Conditions</span>
+              <span class="value">Interdiction de fumer</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AVIS DES PASSAGERS (ALIGNÉS SUR UNE LIGNE AVEC VISAGES FICTIFS) -->
+      <section class="avis-passagers card">
+        <div class="section-header">
+          <h2>Avis des passagers</h2>
+          <a href="#" class="link-all">Voir tous les avis (52)</a>
+        </div>
+        <div class="avis-container">
+          <div class="score-box">
+            <span class="score">4,8</span>
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <span class="sub-score">Basé sur 52 avis</span>
+          </div>
+
+          <div class="reviews-horizontal">
+            <!-- Avis 1 -->
+            <div class="review-card">
+              <div class="user-info">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                  alt="Grâce M." class="avatar-small">
+                <div>
+                  <strong>Grâce M.</strong>
+                  <div class="stars-mini"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <small>Il y a 2
+                      sem.</small></div>
+                </div>
+              </div>
+              <p>Très bon conducteur, ponctuel et respectueux.</p>
+            </div>
+
+            <!-- Avis 2 -->
+            <div class="review-card">
+              <div class="user-info">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80"
+                  alt="Patrick L." class="avatar-small">
+                <div>
+                  <strong>Patrick L.</strong>
+                  <div class="stars-mini"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <small>Il y a 3
+                      sem.</small></div>
+                </div>
+              </div>
+              <p>Trajet agréable, voiture propre, je recommande !</p>
+            </div>
+
+            <!-- Avis 3 -->
+            <div class="review-card">
+              <div class="user-info">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&auto=format&fit=crop&q=80"
+                  alt="Sabrina K." class="avatar-small">
+                <div>
+                  <strong>Sabrina K.</strong>
+                  <div class="stars-mini"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> <small>Il y a 1
+                      mois</small></div>
+                </div>
+              </div>
+              <p>Très bonne conduite, trajet sécurisé et calme.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
 
     <!-- =====================================================================
-         FICHE CONDUCTEUR — TODO (Dev FS3)
-         Mettre en forme l'encart conducteur : nom, véhicule, note,
-         expérience. Un visuel type "carte profil" est attendu.
-
-         *** NE PAS MODIFIER les id ci-dessous ***
+         COLONNE DROITE (PRIX, CONDUCTEUR, RÉSERVATION & RÈGLES)
          ===================================================================== -->
-    <section class="fiche-conducteur">
-      <h2>Conducteur</h2>
-      <p>Nom : <span id="conducteur-nom"></span></p>
-      <p>Véhicule : <span id="conducteur-vehicule"></span></p>
-      <p>Note : <span id="conducteur-note"></span></p>
-      <p>Expérience : <span id="conducteur-trajets"></span></p>
-    </section>
+    <div class="col-sidebar">
 
-    <!-- =====================================================================
-         FORMULAIRE DE RÉSERVATION — TODO (Dev FS3)
-         Mettre en forme le formulaire : nom, téléphone, bouton (désactivé
-         si trajet complet — main.js gère l'attribut disabled). Si
-         l'utilisateur est connecté, les champs nom/téléphone sont
-         pré-remplis automatiquement par main.js (mais restent modifiables).
+      <div class="sidebar-card card">
+        <!-- BLOC PRIX -->
+        <div class="prix-block">
+          <span class="prix-label">Prix par personne</span>
+          <!-- ID conservé -->
+          <div id="trajet-prix" class="prix-amount"></div>
+        </div>
 
-         *** NE PAS MODIFIER les id ci-dessous — main.js les utilise ***
-         ===================================================================== -->
-    <form id="form-reservation">
-      <label for="r-nom">Votre nom</label>
-      <input type="text" id="r-nom">
+        <!-- FICHE CONDUCTEUR -->
+        <section class="fiche-conducteur">
+          <div class="driver-profile">
+            <!-- Photo fictive du conducteur -->
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80"
+              alt="Conducteur" class="avatar-large">
+            <div class="driver-meta">
+              <!-- ID conservé -->
+              <h3 id="conducteur-nom"></h3>
+              <div class="rating">
+                <span class="star-icon"><i class="fas fa-star"></i></span>
+                <!-- ID conservé -->
+                <span id="conducteur-note"></span>
+                <span class="reviews-count">(52 avis)</span>
+              </div>
+              <span class="badge-verified">✓ Profil vérifié</span>
+            </div>
+          </div>
 
-      <label for="r-tel">Votre téléphone</label>
-      <input type="tel" id="r-tel">
+          <ul class="driver-stats">
+            <li><span><i class="fas fa-user"></i> Conducteur depuis</span> <strong>2 ans</strong></li>
+            <li><span><i class="fas fa-star"></i> Taux d'acceptation</span> <strong>98%</strong></li>
+            <li><span><i class="fas fa-car"></i> Trajets réalisés</span> <strong id="conducteur-trajets"></strong></li>
+            <li><span><i class="fas fa-truck"></i> Véhicule</span> <strong id="conducteur-vehicule"></strong></li>
+            <li><span><i class="fas fa-clock"></i> Temps de réponse</span> <strong>Moins de 5 min</strong></li>
+          </ul>
+        </section>
 
-      <button type="submit" id="btn-reserver">Réserver une place</button>
-    </form>
+        <!-- FORMULAIRE DE RÉSERVATION -->
+        <form id="form-reservation">
+          <div class="form-group">
+            <label for="r-nom">Votre nom</label>
+            <!-- ID conservé -->
+            <input type="text" id="r-nom" placeholder="Votre nom complet">
+          </div>
 
-    <!-- Zone d'erreurs de validation — TODO (Dev FS3) : mettre en forme la
-         liste <ul><li> injectée par main.js en cas de formulaire invalide.
-         NE PAS MODIFIER l'id. -->
-    <div id="erreurs-form" hidden></div>
+          <div class="form-group">
+            <label for="r-tel">Votre téléphone</label>
+            <!-- ID conservé -->
+            <input type="tel" id="r-tel" placeholder="Ex: 061234567">
+          </div>
+
+          <!-- ID conservé -->
+          <button type="submit" id="btn-reserver" class="btn-primary">Réserver une place</button>
+          <button type="button" class="btn-secondary"><i class="fas fa-comments"></i> Contacter le conducteur</button>
+        </form>
+
+        <!-- ID conservé -->
+        <div id="erreurs-form" hidden></div>
+      </div>
+
+
+      <!-- RÈGLES DU TRAJET -->
+      <section class="regles-trajet card">
+        <h2>Règles du trajet</h2>
+        <ul class="rules-list">
+          <li>
+            <span class="icon-wrap-sm">
+              <i class="fas fa-users"></i>
+            </span>
+            <span>Respectez le conducteur et les autres passagers</span>
+          </li>
+          <li>
+            <span class="icon-wrap-sm">
+              <i class="fas fa-clock"></i>
+            </span>
+            <span>Arrivez 5 min avant l'heure de départ</span>
+          </li>
+          <li>
+            <span class="icon-wrap-sm">
+              <i class="fas fa-calendar-alt"></i>
+            </span>
+            <span>Annulation possible jusqu'à 1h avant le départ</span>
+          </li>
+          <li>
+            <span class="icon-wrap-sm">
+              <i class="fas fa-smoking-ban"></i>
+            </span>
+            <span>Pas de musique forte</span>
+          </li>
+          <li>
+            <span class="icon-wrap-sm">
+              <i class="fas fa-car"></i>
+            </span>
+            <span>Gardez le véhicule propre</span>
+          </li>
+        </ul>
+      </section>
+
+    </div>
   </main>
 
   <div id="erreur-globale" hidden></div>
 
+  <!-- FOOTER -->
+  <footer id="footer-global">
+
+
+    <div class="footer-container">
+
+      <div class="footer-col footer-about">
+        <div class="footer-logo">
+          <a href="../accueil/index.html" id="logo-link"><img src="../images/logo.png" alt="Logo de l'application" width="100"></a>
+          <strong>Nzéla-Nzéla</strong>
+        </div>
+        <p>Nzéla-Nzéla: Partage ta voiture, partage ta route</p>
+
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Colonne 2 : Navigation -->
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="../accueil/index.html">Accueil</a></li>
+          <li><a href="../recherche/recherche.html">Rechercher un trajet</a></li>
+          <li><a href="../proposer/proposer.html">Proposer un trajet</a></li>
+          <li><a href="#a-propos">À propos</a></li>
+          <li><a href="#aide">Aide</a></li>
+        </ul>
+      </div>
+
+      <!-- Colonne 3 : Ressources -->
+      <div class="footer-col">
+        <h3>Ressources</h3>
+        <ul>
+          <li><a href="#">Sécurité</a></li>
+          <li><a href="#">Conditions d'utilisation</a></li>
+          <li><a href="#">Confidentialité</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Colonne 4 : Contact -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="contact-list">
+          <li>contact@nzela-nzela.com</li>
+          <li>+242 06 123 45 67</li>
+          <li>Brazzaville, Congo</li>
+        </ul>
+      </div>
+
+
+    </div>
+    <!-- Bas du footer (Copyright & Crédits) -->
+    <div class="footer-bottom">
+      <p>© 2026 Nzéla-Nzéla. Tous droits réservés.</p>
+
+    </div>
+
+  </footer>
+
   <script src="../functions.js"></script>
   <script src="../main.js"></script>
 </body>
+
 </html>
