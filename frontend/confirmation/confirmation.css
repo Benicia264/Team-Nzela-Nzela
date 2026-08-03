@@ -1,58 +1,286 @@
-.bloc-confirmation{
-    background-color: var(--primary-light);
-    border-radius: var(--radius-lg);
-    padding: 40px 20px;
-    text-align: center;
-    margin-bottom: 24px;
-}
+/* =========================================================
+   confirmation.css
+   Utilise les variables définies dans ../style.css
+   (--primary-color, --primary-hover, --primary-light,
+   --text-main, --text-muted, --card-bg, --border-color,
+   --radius-sm/md/lg, --shadow-sm/md)
+   ========================================================= */
 
-.bloc-confirmation h1{
-    color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 12px;
-}
-
-.prochaines-etapes a{
-    display:inline-block;
-    background: var(--primary-color);
-    color: white;
-    padding: 12px 20px;
-    border-radius: var(--radius-md);
-    text-decoration: none;
-    margin-right: 12px;
-}
-.prochaines-etapes a:hover{
-    background: var(--primary-hover);
-}
-
-.prochaines-etapes h2{
-    font-size: 1.25rem;
-    margin-bottom: 16px;
-    color: var(--text-main);
-}
-
-h2{
-    font-size: 1.5rem;
-    margin-bottom: 16px;
-    color: var(--text-main);
-    text-align: center;
-}
-
-.prochaines-etapes {
+/* ---------- En-tête simple (logo + badge) ---------- */
+.confirmation-header {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px 0 8px;
   display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+.confirmation-header__logo img {
+  height: 40px;
+}
+.badge-trajet-confirme {
+  background: var(--primary-light);
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 999px;
 }
 
+/* ---------- Conteneur principal ---------- */
+.confirmation-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 0 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------- Bloc de succès ---------- */
+.bloc-confirmation {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 40px 24px;
+  text-align: center;
+}
+.bloc-confirmation__icone {
+  width: 64px;
+  height: 64px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+.bloc-confirmation h1 {
+  font-size: 1.75rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+.bloc-confirmation p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ---------- Card conducteur ---------- */
+.card-conducteur {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.card-conducteur__photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-light);
+}
+.card-conducteur__infos {
+  flex: 1;
+}
+.card-conducteur__nom-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-conducteur__nom-note h2 {
+  font-size: 1.25rem;
+  color: var(--text-main);
+}
+.card-conducteur__nom-note .note {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.card-conducteur__trajets {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 6px 0 12px;
+}
+.card-conducteur__details {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+.card-conducteur__details .separateur {
+  color: var(--border-color);
+}
+
+/* ---------- Détails du trajet ---------- */
+.details-trajet {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+}
+.details-trajet h3 {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+.details-trajet__ligne {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+}
+.details-trajet__ligne:last-child {
+  border-bottom: none;
+}
+.details-trajet__label {
+  color: var(--text-muted);
+}
+.details-trajet__valeur {
+  color: var(--text-main);
+  font-weight: 500;
+}
+.details-trajet__valeur--prix {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* ---------- Point de rencontre ---------- */
+.point-rencontre {
+  background: var(--primary-light);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.point-rencontre__texte h4 {
+  color: var(--text-main);
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+.point-rencontre__texte p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.point-rencontre__icone {
+  font-size: 2rem;
+}
+
+/* ---------- Boutons de contact ---------- */
+.actions-contact {
+  display: flex;
+  gap: 16px;
+}
+.btn-message,
+.btn-appel {
+  flex: 1;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.btn-message {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+}
+.btn-message:hover {
+  background: var(--primary-hover);
+}
+.btn-appel {
+  background: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+.btn-appel:hover {
+  background: var(--primary-light);
+}
+
+/* ---------- Bloc sécurité ---------- */
+.bloc-securite {
+  background: var(--bg-body, #f8fafc);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.bloc-securite__icone {
+  font-size: 1.5rem;
+}
+.bloc-securite h4 {
+  color: var(--text-main);
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+.bloc-securite p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- Prochaines étapes ---------- */
 .prochaines-etapes {
   text-align: center;
 }
-
+.prochaines-etapes h2 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+  color: var(--text-main);
+}
+.prochaines-etapes a {
+  display: inline-block;
+  background: var(--primary-color);
+  color: white;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  margin: 0 6px 12px;
+}
+.prochaines-etapes a:hover {
+  background: var(--primary-hover);
+}
 .prochaines-etapes__image {
   display: block;
   margin: 24px auto 0;
-  max-width: 330px;
+  max-width: 220px;
   height: auto;
-  border-radius: var(--radius-md);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .confirmation-header,
+  .confirmation-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .card-conducteur {
+    flex-direction: column;
+    text-align: center;
+  }
+  .card-conducteur__details {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .point-rencontre {
+    flex-direction: column;
+    text-align: center;
+  }
+  .actions-contact {
+    flex-direction: column;
+  }
 }
