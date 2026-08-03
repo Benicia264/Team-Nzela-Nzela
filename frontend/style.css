@@ -52,7 +52,7 @@ main {
 header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: index 9999!important;
 }
 
 #nav-session1 {
@@ -310,7 +310,22 @@ section.card{
   font-size: 0.9rem;
   margin-top: 1rem;
 }
-
+.barre-filtres{
+  margin: var(--section-sm-padding);
+}
+#page-recherche #nav-session1{
+  margin-bottom: 0;
+}
+.barre-filtres{
+  margin-top: 0!important;
+  margin-bottom: 0!important;
+}
+.entete-recherche{
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+  margin-top: 0!important;
+  background: white;
+}
 [hidden] {
   display: none !important;
 }
