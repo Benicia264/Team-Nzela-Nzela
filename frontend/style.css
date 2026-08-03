@@ -41,10 +41,11 @@ main {
 /* =========================================================
    2. HEADER & NAVIGATION IDENTIQUES PARTOUT
    ========================================================= */
-  header {
+  /* ---------- Header ---------- */
+header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: index 100;
 }
   #nav-session1 {
   background-color: var(--card-bg);
