@@ -17,6 +17,12 @@
       "nom": "Giovani Moukoko",
       "telephone": "068996106",
       "mot_de_passe_hash": "scrypt:32768:8:1$ZuREkG9R2moYi6yc$1b55dd8208a37e799cf8cc7410bb34527cee2fce212d6622f1faf29eb930f43652a6b9db6f8459755f7e16a109476211c3d0caa569f5350a732f1b97e6fff1d6"
+    },
+    {
+      "id": 4,
+      "nom": "Mondzali",
+      "telephone": "069652292",
+      "mot_de_passe_hash": "scrypt:32768:8:1$w1y7hDACa30fSD2h$a0ea4827fb65bd39074fa5a1de812c50852896660da7507b1512689bab0e735018ad41b1367edf148a586dce4b1837e8e0eb6b902513d8f9a20e60faa2861213"
     }
   ]
 }
