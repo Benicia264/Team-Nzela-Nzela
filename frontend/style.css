@@ -52,7 +52,7 @@ main {
 header {
   position: sticky;
   top: 0;
-  z-index: index 9999!important;
+  z-index: 9999!important;
 }
 
 #nav-session1 {
@@ -226,6 +226,13 @@ section.card{
 }
 .nn-card{
   padding: 0;
+}
+
+.section-card{
+  padding-top: 0!important;
+}
+.header-dashboard{
+  padding: 0 var(--section-sm-padding)!important;
 }
 /* Réseaux sociaux */
 .footer-socials {
