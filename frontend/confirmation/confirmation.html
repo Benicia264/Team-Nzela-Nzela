@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BraCovoit — Confirmation</title>
+  <title>Nzéla-Nzéla — Confirmation</title>
+  <link rel="icon" type="image/png" href="../images/logo.png">
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="confirmation.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/fontawesome.min.css" integrity="sha512-WAQldzapOKc+yIZB/g4npsWhF43dQ74uxwR6WkySVIKVGKaVNSuRw19CQeqN2OmYmg34g7TsZv3sh9nsQXYj3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+    integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/fontawesome.min.css"
+    integrity="sha512-WAQldzapOKc+yIZB/g4npsWhF43dQ74uxwR6WkySVIKVGKaVNSuRw19CQeqN2OmYmg34g7TsZv3sh9nsQXYj3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body id="page-confirmation">
 
-<header>
+  <!-- NAVIGATION — TODO (Dev FS6) -->
+  <header>
     <!-- NE PAS MODIFIER l'id — main.js y affiche l'état de connexion -->
     <div id="nav-session1">
-      <img src="../images/logo.png" alt="Logo de l'application" width="100" height="50">
+      <a href="../accueil/index.html" id="logo-link"><img src="../images/logo.png" alt="Logo de l'application" width="100"></a>
       <nav class="Liens-navigation">
         <a href="../accueil/index.html">Accueil</a>
         <a href="../recherche/recherche.html">Rechercher un trajet</a>
         <a href="../trajet/trajet.html">Trajet</a>
         <a href="#a-propos">A propos</a>
         <a href="#aide">Aide</a>
-
       </nav>
-
       <div class="actions-header">
         <a href="../login/login.html" class="btn-connexion">Se connecter</a>
         <a href="../inscription/inscription.html" class="btn-inscription">S'inscrire</a>
@@ -48,129 +54,53 @@
       <p id="confirmation-message">Merci pour votre confiance. Toutes les informations de votre trajet sont ci-dessous.</p>
     </section>
 
-    <!-- =====================================================================
-         CARD CONDUCTEUR — contenu STATIQUE pour l'instant.
-         ⚠️ main.js n'injecte aucune donnée conducteur/trajet/prix ici.
-         À rendre dynamique plus tard si le backend transmet ces infos
-         (ex. via des paramètres d'URL supplémentaires, ou une vraie route
-         API dédiée à la confirmation).
-         ===================================================================== -->
-    <section class="card-conducteur">
-      <img src="../images/man-working-as-truck-driver-posing.jpg" alt="Photo du conducteur" class="card-conducteur__photo">
-      <div class="card-conducteur__infos">
-        <div class="card-conducteur__nom-note">
-          <h2> MASSAMBA Christian <i class="fas fa-user"></i></h2>
-          <span class="note">★ 4,9</span>
-        </div>
-        <p class="card-conducteur__trajets">36 trajets réalisés</p>
-        <div class="card-conducteur__details">
-          <span><i class="fas fa-car"></i>  Véhicule — Couleur</span>
-          <span class="separateur">|</span>
-          <span><i class="fas fa-id-badge"></i> Immatriculation — XX-123-AB</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         DÉTAILS DU TRAJET — contenu STATIQUE, même remarque que ci-dessus.
-         ===================================================================== -->
-    <section class="details-trajet">
-      <h3> Détails de votre trajet</h3>
-      <div class="details-trajet__ligne">
-        <span class="details-trajet__label"> <i class="fas fa-map-marker-alt"></i> Départ</span>
-        <span class="details-trajet__valeur">Quartier de départ</span>
-      </div>
-      <div class="details-trajet__ligne">
-        <span class="details-trajet__label"> <i class="fas fa-map-marker-check"></i> Arrivée</span>
-        <span class="details-trajet__valeur">Quartier d'arrivée</span>
-      </div>
-      <div class="details-trajet__ligne">
-        <span class="details-trajet__label"> <i class="fas fa-clock"></i> Départ prévu</span>
-        <span class="details-trajet__valeur">Heure</span>
-      </div>
-      <div class="details-trajet__ligne">
-        <span class="details-trajet__label"> <i class="fas fa-chair"></i> Places réservées</span>
-        <span class="details-trajet__valeur">1 place</span>
-      </div>
-      <div class="details-trajet__ligne">
-        <span class="details-trajet__label"> <i class="fas fa-coins"></i> Montant</span>
-        <span class="details-trajet__valeur details-trajet__valeur--prix">— FCFA</span>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         POINT DE RENCONTRE
-         ===================================================================== -->
-    <section class="point-rencontre">
-      <div class="point-rencontre__texte">
-        <h4>Point de rencontre</h4>
-        <p>Nous vous donnons rendez-vous au point de départ. Soyez présent 5 minutes avant l'heure prévue.</p>
-      </div>
-      <div class="point-rencontre__icone"><span><i class="fas fa-map-marker-alt"></i></span></div>
-    </section>
-
-    <!-- =====================================================================
-         ACTIONS — boutons contact conducteur (décoratifs pour l'instant,
-         pas de vraie fonctionnalité tant que le backend n'expose pas de
-         téléphone/messagerie conducteur à cet endroit)
-         ===================================================================== -->
-    <section class="actions-contact">
-      <button type="button" class="btn-message"> <i class="fas fa-comment"  ></i> Envoyer un message</button>
-      <button type="button" class="btn-appel"><i class="fas fa-phone"  ></i> Appeler le conducteur</button>
-    </section>
-
-    <!-- =====================================================================
-         SÉCURITÉ
-         ===================================================================== -->
-    <section class="bloc-securite">
-      <span class="bloc-securite__icone"><i class="fas fa-shield-alt"></i></span>
-      <div>
-        <h4>Votre sécurité, notre priorité</h4>
-        <p>Vous pouvez signaler un problème à tout moment depuis votre trajet.</p>
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         PROCHAINES ÉTAPES
-         *** NE PAS MODIFIER les href/id des liens ci-dessous ***
-         ===================================================================== -->
+    <!-- PROCHAINES ÉTAPES — TODO (Dev FS6) : mettre en forme ces 3 liens
+         (boutons ou cartes de navigation).
+         NE PAS MODIFIER les href/id des liens. -->
+    <h2>Prochaines étapes</h2>
     <section class="prochaines-etapes">
-      <h2>Prochaines étapes</h2>
-      <a href="../accueil/index.html"> <i class="fas fa-home"></i> Retour à l'accueil</a>
-      <a id="lien-mes-trajets" href="../mes-trajets/mes-trajets.html"> <i class="fas fa-car"></i> Voir mes trajets</a>
-      <a href="../recherche/recherche.html"> <i class="fas fa-search"></i> Rechercher d'autres trajets</a>
-      <img src="../images/confirmation-illustration.png" alt="Illustration trajet confirmé" class="prochaines-etapes__image">
+
+      <a href="../accueil/index.html">Retour à l'accueil</a>
+      <a id="lien-mes-trajets" href="../mes-trajets/mes-trajets.html">Voir mes trajets</a>
+      <a href="../recherche/recherche.html">Rechercher d'autres trajets</a>
+
+      <img src="../images/confirmation-illustration.png" alt="Illustration trajet confirmé"
+        class="prochaines-etapes__image">
     </section>
-
- </main>
-
+  </main>
   <footer id="footer-global">
+
+
     <div class="footer-container">
+
       <div class="footer-col footer-about">
         <div class="footer-logo">
-          <img src="../images/logo.png" alt="Logo de l'application" width="100" height="50">
+          <a href="../accueil/index.html" id="logo-link"><img src="../images/logo.png" alt="Logo de l'application" width="100"></a>
           <strong>Nzéla-Nzéla</strong>
         </div>
         <p>Nzéla-Nzéla: Partage ta voiture, partage ta route</p>
+
         <div class="footer-socials">
-          <a href="#" aria-label="Facebook"><span>f</span></a>
-          <a href="#" aria-label="Instagram"><span>📷</span></a>
-          <a href="#" aria-label="Twitter"><span>🐦</span></a>
-          <a href="#" aria-label="LinkedIn"><span>in</span></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
 
+      <!-- Colonne 2 : Navigation -->
       <div class="footer-col">
         <h3>Navigation</h3>
         <ul>
           <li><a href="../accueil/index.html">Accueil</a></li>
-          <li><a href="../recherche/recherche.html">Trajets</a></li>
+          <li><a href="../recherche/recherche.html">Rechercher un trajet</a></li>
           <li><a href="../proposer/proposer.html">Proposer un trajet</a></li>
           <li><a href="#a-propos">À propos</a></li>
           <li><a href="#aide">Aide</a></li>
         </ul>
       </div>
 
+      <!-- Colonne 3 : Ressources -->
       <div class="footer-col">
         <h3>Ressources</h3>
         <ul>
@@ -181,6 +111,7 @@
         </ul>
       </div>
 
+      <!-- Colonne 4 : Contact -->
       <div class="footer-col">
         <h3>Contact</h3>
         <ul class="contact-list">
@@ -189,17 +120,18 @@
           <li>Brazzaville, Congo</li>
         </ul>
       </div>
-    </div>
 
+
+    </div>
+    <!-- Bas du footer (Copyright & Crédits) -->
     <div class="footer-bottom">
-      <p>© 2025 Nzéla-Nzéla. Tous droits réservés.</p>
+      <p>© 2026 Nzéla-Nzéla. Tous droits réservés.</p>
+
     </div>
+
   </footer>
-
-  <div id="erreur-globale" hidden></div>
-
-  <!-- NE PAS MODIFIER -->
   <script src="../functions.js"></script>
   <script src="../main.js"></script>
 </body>
+
 </html>

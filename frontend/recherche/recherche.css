@@ -15,10 +15,28 @@ body{
 }
 
 .barre-filtres{
+    background: white;
     display: flex;
     gap: 16px;
     align-items: center;
     margin-bottom: 50px;
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--color-border);
+}
+.barre-filtres input{
+    width: 100%;
+}
+.barre-filtres button{
+    display: flex;
+    gap: 8px;
+    font-size: 1rem;
+}
+
+.barre-filtres select{
+    background: white!important;
+    color: var(--color-text)!important;
 }
 
 .entete-recherche {
@@ -113,24 +131,34 @@ select#filtre-depart {
     border-radius: var(--radius-lg);
     padding: 20px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: .4s;
+}
+
+.carte-trajet:hover{
+    border: 1px solid var(--color-primary);
+    
 }
 
 .prix{
     color: var(--color-primary);
     font-weight: bold;
     font-size: 1.25rem;
+    padding-bottom: 25px;
 }
 
 .conducteur{
     color: var(--color-text-muted);
     font-size: 0.9rem;
+    padding-top: 25px;
 }
 .badge{
     padding: 4px 12px;
     border-radius: 999px;
     font-size: 0.85rem;
     font-weight: bold;
-    display: inline-block;
+    display: block;
+    width: max-content;
+    margin-bottom: 20px;
 }
 
 .badge-dispo{
